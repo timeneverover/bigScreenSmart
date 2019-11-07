@@ -1,0 +1,1124 @@
+.datav-gui {
+	font-style: normal;
+	height: 100%;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	user-select: none;
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	font-size: 12px;
+	color: #bcc9d4;
+	box-sizing: border-box;
+	background: #1b1f25
+}
+
+.datav-gui .gui-field-color-recommend {
+	width: 240px;
+	padding: 10px 10px;
+	background: #1d262e;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .59);
+	border: 1px solid #3a4659;
+	display: flex;
+	flex-flow: row wrap;
+	position: relative
+}
+
+.datav-gui .gui-field-color-recommend .popover-item {
+	width: 22px;
+	height: 14px;
+	margin: 1px;
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer
+}
+
+.datav-gui .gui-field-color-recommend .selected {
+	border: 1px solid #fff
+}
+
+.datav-gui * {
+	box-sizing: content-box
+}
+
+.datav-gui .gui-scroll-container {
+	width: 100%;
+	height: 100%;
+	overflow: scroll
+}
+
+.datav-gui .gui-root-container {
+	width: 100%;
+	background: #1b1f25;
+	overflow: hidden
+}
+
+.datav-gui .datav-gui-icon {
+	cursor: pointer;
+	font-style: normal;
+	font-size: 12px
+}
+
+.datav-gui .datav-gui-icon:hover {
+	color: #00baff
+}
+
+.datav-gui .datav-gui-icon:active {
+	color: rgba(0, 186, 255, .3)
+}
+
+.datav-gui .datav-gui-icon:disabled {
+	color: #647279
+}
+
+.datav-gui input[type=range] {
+	margin: 11px 0;
+	height: 2px;
+	-webkit-appearance: none;
+	background: 0 0;
+	box-sizing: border-box;
+	display: inline-block
+}
+
+.datav-gui input[type=range]:focus {
+	outline: 0
+}
+
+.datav-gui input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 2px;
+	cursor: pointer;
+	background: 0 0;
+	border-radius: 0
+}
+
+.datav-gui input[type=range]::-webkit-slider-thumb {
+	height: 9px;
+	width: 9px;
+	border-radius: 0;
+	background: #fff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -4px
+}
+
+.datav-gui input[type=range]::-moz-range-track {
+	width: 100%;
+	height: 2px;
+	cursor: pointer;
+	background: 0 0;
+	border-radius: 0
+}
+
+.datav-gui input[type=range]::-moz-range-thumb {
+	height: 9px;
+	width: 9px;
+	border-radius: 0;
+	background: #fff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -4px
+}
+
+.datav-gui input[type=range]::-ms-track {
+	width: 100%;
+	height: 2px;
+	cursor: pointer;
+	background: 0 0;
+	border-radius: 0;
+	color: transparent
+}
+
+.datav-gui input[type=range]::-ms-fill-lower {
+	background: #00baff;
+	border-radius: 0
+}
+
+.datav-gui input[type=range]::-ms-fill-upper {
+	background: #fff;
+	border-radius: 0
+}
+
+.datav-gui input[type=range]::-ms-thumb {
+	height: 9px;
+	width: 9px;
+	border-radius: 0;
+	background: #fff;
+	cursor: pointer
+}
+
+.datav-gui input[type=range]:focus::-ms-fill-lower {
+	background: #00baff
+}
+
+.datav-gui input[type=range]:focus::-ms-fill-upper {
+	background: #fff
+}
+
+.datav-gui input[type=range]::-webkit-range-progress {
+	background-color: #00baff
+}
+
+.datav-gui input[type=number]::-webkit-inner-spin-button,
+.datav-gui input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+	width: 0;
+	height: 0;
+	display: none
+}
+
+.datav-gui input[type=number]:focus,
+.datav-gui input[type=radio]:focus,
+.datav-gui input[type=text]:focus,
+.datav-gui select {
+	outline: 0
+}
+
+.datav-gui input {
+	background: #0e1013
+}
+
+.datav-gui input::-webkit-input-placeholder {
+	color: #bcc9d4
+}
+
+.datav-gui input::-moz-placeholder {
+	color: #bcc9d4
+}
+
+.datav-gui input:-ms-input-placeholder {
+	color: #bcc9d4
+}
+
+.datav-gui input:-moz-placeholder {
+	color: #bcc9d4
+}
+
+.datav-gui ::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	background-color: transparent
+}
+
+.datav-gui ::-webkit-scrollbar-thumb {
+	background-color: transparent
+}
+
+.datav-gui .gui-group-controller .gui-group-name {
+	border-bottom: 1px solid #282f3a;
+	background: #1b1f25;
+	line-height: 26px;
+	padding: 6px 5px;
+	position: relative;
+	cursor: pointer
+}
+
+.datav-gui .gui-group-controller .gui-group-name.disabled {
+	pointer-events: none;
+	cursor: default;
+	color: #647279
+}
+
+.datav-gui .gui-group-controller .gui-group-name.disabled .show {
+	pointer-events: auto;
+	cursor: pointer
+}
+
+.datav-gui .gui-group-controller .gui-group-name span.fixed-group-name {
+	padding-left: 13px
+}
+
+.datav-gui .gui-group-controller .gui-group-name span .fold {
+	font-size: 12px;
+	margin-right: 4px;
+	display: inline-block;
+	transition: transform .2s ease-in-out
+}
+
+.datav-gui .gui-group-controller .gui-group-name .show {
+	position: absolute;
+	right: 8px;
+	font-size: 18px;
+	cursor: pointer
+}
+
+.datav-gui .gui-group-controller .gui-group-name-fake {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	box-sizing: border-box
+}
+
+.datav-gui .gui-group-controller .gui-group-container {
+	background: #15171c;
+	padding: 6px 10px 6px 7px;
+	transition: height .2s ease-in-out, opacity .1s ease-in-out
+}
+
+.datav-gui .gui-group-controller .gui-group-container.fold-container {
+	padding-top: 0;
+	padding-bottom: 0
+}
+
+.datav-gui .gui-field-controller {
+	padding: 6px 0 6px 18px;
+	position: relative;
+	color: #bcc9d4;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	min-height: 24px
+}
+
+.datav-gui .gui-field-controller .gui-note {
+	margin-left: 5px
+}
+
+.datav-gui .gui-field-controller .gui-field-name {
+	padding-right: 5px;
+	line-height: 24px
+}
+
+.datav-gui .gui-field-controller .gui-field-container {
+	display: block
+}
+
+.datav-gui .gui-field-controller .gui-field-component {
+	min-height: 24px;
+	width: 175px;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color,
+.datav-gui .gui-field-controller .gui-field-component .gui-input-number,
+.datav-gui .gui-field-controller .gui-field-component .gui-input-select,
+.datav-gui .gui-field-controller .gui-field-component .gui-input-text {
+	height: 24px;
+	display: inline-block;
+	border: 1px solid #282f3a;
+	box-sizing: border-box;
+	color: #bcc9d4;
+	margin: 0;
+	vertical-align: top
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-input-number[readonly] {
+	color: #bcc9d4;
+	background: rgba(102, 102, 102, .04)
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-input-text {
+	width: 100%;
+	padding: 0 5px
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-input-number:focus,
+.datav-gui .gui-field-controller .gui-field-component .gui-input-select:focus,
+.datav-gui .gui-field-controller .gui-field-component .gui-input-text:focus {
+	border-color: #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-input-number[readonly]:focus {
+	border-color: #282f3a
+}
+
+.datav-gui .gui-field-controller .gui-field-component input[type=checkbox] {
+	visibility: hidden
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-input-select {
+	border-radius: 4px
+}
+
+.datav-gui .gui-field-controller .gui-field-component label.gui-for-checkbox {
+	display: block;
+	width: 14px;
+	height: 14px;
+	border: 1px solid #3a4659;
+	position: relative;
+	cursor: pointer
+}
+
+.datav-gui .gui-field-controller .gui-field-component label.gui-for-checkbox:hover {
+	border: 1px solid #00baff;
+	background: rgba(0, 186, 255, .3)
+}
+
+.datav-gui .gui-field-controller .gui-field-component label.gui-for-checkbox:active {
+	border: 1px solid #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-component label.gui-for-checkbox.checked {
+	border-color: #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-component label.gui-for-checkbox.checked:after {
+	content: '';
+	width: 7px;
+	height: 3px;
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	border: 1px solid #00baff;
+	border-top: none;
+	border-right: none;
+	background: rgba(0, 0, 0, 0);
+	transform: rotate(-45deg)
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color {
+	width: 100%;
+	cursor: pointer;
+	position: relative
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color .gui-field-color-picker {
+	width: 22px;
+	height: 22px;
+	background: 0 0;
+	background-image:url(../assets/color.png);
+	background-size: 22px 22px;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-left: 1px solid #282f3a
+}
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color .gui-field-color-picker input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor:pointer;
+}
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color .gui-field-color-block-border {
+	width: 20px;
+	height: 14px;
+	position: absolute;
+	display: inline-block;
+	top: 4px;
+	left: 3px;
+	box-sizing: border-box
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color .gui-field-color-block-border .gui-field-color-block {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+	position: absolute
+}
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color .gui-field-color-block-border input {
+    position: absolute;
+    top: -5px;
+    left: -3px;
+    width: 26px;
+    height: 24px;
+    background-color: rgb(255,255,255,0);
+    cursor:pointer;
+}
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color .gui-field-color-value {
+	padding: 0 5px 0 30px;
+	border: none;
+	width: 115px;
+	height: 100%;
+	display: inline-block;
+	color: #bcc9d4;
+	font-size: 12px
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-field-color .gui-field-color-value:focus {
+	outline: 0
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-for-radio {
+	font-size: 12px;
+	color: #bcc9d4;
+	height: 24px;
+	padding-bottom: 6px;
+	position: relative;
+	margin-right: 5px;
+	display: flex;
+	align-items: center
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-for-radio .gui-input-radio {
+	-webkit-appearance: none;
+	width: 14px;
+	height: 14px;
+	border: 1px solid #3a4659;
+	cursor: pointer;
+	position: relative;
+	margin: 4px
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-for-radio .gui-input-radio:hover {
+	background: rgba(0, 186, 255, .3);
+	border: 1px solid #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-for-radio .gui-input-radio:active {
+	border: 1px solid #00baff;
+	background: 0 0
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-for-radio .gui-input-radio:disabled {
+	border: 1px solid #3a4659;
+	background: rgba(58, 70, 89, .3)
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-for-radio .gui-input-radio:checked {
+	border: 1px solid #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-component .gui-for-radio .gui-input-radio:checked::after {
+	content: '';
+	width: 7px;
+	height: 3px;
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	border: 1px solid #00baff;
+	border-top: none;
+	border-right: none;
+	background: rgba(0, 0, 0, 0);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number {
+	position: relative;
+	height: 24px;
+	display: inline-block
+}
+
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number .number-minus,
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number .number-plus {
+	display: block;
+	position: absolute;
+	width: 24px;
+	height: 10px;
+	line-height: 8px;
+	color: #bcc9d4;
+	right: 0;
+	text-align: center;
+	background: #0e1013;
+	border: 1px solid #282f3a;
+	font-style: normal;
+	cursor: pointer;
+	z-index: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number .number-minus:active,
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number .number-plus:active {
+	border-color: #00baff;
+	z-index: 2;
+	color: #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number .number-minus:disabled,
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number .number-plus:disabled {
+	z-index: 2;
+	color: #647279;
+	outline: 0
+}
+
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number .number-plus {
+	height: 10.5px;
+	line-height: 10.5px;
+	top: 0
+}
+
+.datav-gui .gui-field-controller .gui-field-number-component .gui-for-number .number-minus {
+	bottom: 0
+}
+
+.datav-gui .gui-field-controller .gui-field-number-component .gui-input-number {
+	width: 85px;
+	padding-left: 5px;
+	padding-right: 5px;
+	position: relative
+}
+
+.datav-gui .gui-field-controller .gui-field-number-component .gui-input-number:focus {
+	z-index: 2
+}
+
+.datav-gui .gui-field-controller .gui-field-range-component .gui-input-range {
+	width: 100%
+}
+
+.datav-gui .gui-field-controller .gui-field-range-component .range-value-text-container {
+	display: flex;
+	width: 100%
+}
+
+.datav-gui .gui-field-controller .gui-field-range-component .range-value-text {
+	flex: 1;
+	color: #bcc9d4;
+	font-size: 12px
+}
+
+.datav-gui .gui-field-controller .gui-field-range-component .range-value-text .gui-input-number,
+.datav-gui .gui-field-controller .gui-field-range-component .range-value-text span {
+	width: 58.33333333px;
+	display: block;
+	text-align: center
+}
+
+.datav-gui .gui-field-controller .gui-field-range-component .range-value-text .gui-input-number {
+	background: #27343e
+}
+
+.datav-gui .gui-field-controller .gui-field-range-component .range-value-text span {
+	color: #647279
+}
+
+.datav-gui .gui-field-controller .gui-field-range-component .range-value-text:nth-child(2) .gui-input-number {
+	border: none;
+	border-top: 1px solid #282f3a;
+	border-bottom: 1px solid #282f3a;
+	background: 0 0
+}
+
+.datav-gui .gui-field-controller .gui-field-percent-component {
+	position: relative
+}
+
+.datav-gui .gui-field-controller .gui-field-percent-component .gui-input-range {
+	width: 115px;
+	float: left
+}
+
+.datav-gui .gui-field-controller .gui-field-percent-component .gui-input-number {
+	width: 35px;
+	margin-left: 10px;
+	padding: 5px
+}
+
+.datav-gui .gui-field-controller .gui-field-percent-component:after {
+	content: '%';
+	font-size: 12px;
+	color: #bcc9d4;
+	height: 24px;
+	display: inline-block;
+	position: absolute;
+	line-height: 24px;
+	right: 0;
+	top: 0
+}
+
+.datav-gui .gui-field-controller .gui-field-multi-color-component .color-gradient-block {
+	width: 8px;
+	height: 56px;
+	float: left;
+	position: relative
+}
+
+.datav-gui .gui-field-controller .gui-field-multi-color-component .color-gradient-components {
+	width: 159px;
+	display: inline-block;
+	margin-left: 8px
+}
+
+.datav-gui .gui-field-controller .gui-field-multi-color-component .color-gradient-components .gui-field-component {
+	width: 100%
+}
+
+.datav-gui .gui-field-controller .gui-field-multi-color-component .color-gradient-components .gui-field-component .gui-field-color input {
+	width: 100px
+}
+
+.datav-gui .gui-field-controller .gui-field-multi-color-component .color-gradient-components .gui-field-component:first-child {
+	margin-bottom: 8px
+}
+
+.datav-gui .gui-field-controller .gui-field-color-component {
+	position: relative
+}
+
+.datav-gui .gui-field-controller .gui-field-color-component .gui-field-color {
+	background: #0e1013
+}
+
+.datav-gui .gui-field-controller .gui-field-color-component .gui-field-color-recommend {
+	width: 240px;
+	padding: 10px 10px;
+	background: #1d262e;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .59);
+	border: 1px solid #3a4659;
+	display: flex;
+	flex-flow: row wrap;
+	position: relative
+}
+
+.datav-gui .gui-field-controller .gui-field-color-component .gui-field-color-recommend .popover-item {
+	width: 22px;
+	height: 14px;
+	margin: 1px;
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer
+}
+
+.datav-gui .gui-field-controller .gui-field-color-component .gui-field-color-recommend .selected {
+	border: 1px solid #fff
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component {
+	position: relative
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-input-url {
+	width: 100%;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #0e1013;
+	color: #bcc9d4;
+	box-sizing: border-box;
+	border: 1px dashed #282f3a;
+	border-bottom: 1px solid transparent
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-input-url:hover {
+	outline: 0;
+	border: 1px dashed #282f3a;
+	border-color: #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-input-url i {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	text-align: center;
+	line-height: 24px
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-input-url input {
+	width: 151px;
+	padding-right: 5px;
+	height: 22px;
+	border: none
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-input-url input:hover {
+	border: none
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-label-file {
+	width: 175px;
+	height: 107px;
+	border: 1px dashed #282f3a;
+	background: #0e1013;
+	box-sizing: border-box;
+	position: relative;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: wrap;
+	padding: 9px
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-label-file:hover {
+	border-color: #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-label-file .image-placeholder {
+	width: 155px;
+	margin: 10px 0 10px;
+	display: block;
+	font-size: 36px
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-label-file .gui-image-dragtip {
+	text-align: center;
+	color: #bcc9d4;
+	max-height: 32px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-label-file .upload-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	line-height: 107px;
+	text-align: center;
+	background: rgba(0, 0, 0, .6);
+	color: #bcc9d4
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-label-file .upload-cover .gui-delete {
+	font-size: 24px
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-label-file .gui-input-file {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%
+}
+
+.datav-gui .gui-field-controller .gui-field-image-component .gui-label-file .gui-input-file:hover {
+	z-index: 2
+}
+
+.datav-gui .gui-field-controller .gui-field-image-select-component {
+	position: relative
+}
+
+.datav-gui .gui-field-controller .gui-field-image-select-component .gui-field-image-select {
+	width: 175px;
+	height: 107px;
+	border: 1px dashed #282f3a;
+	background: #0e1013;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 9px
+}
+
+.datav-gui .gui-field-controller .gui-field-image-select-component .gui-field-image-select:hover {
+	border-color: #00baff
+}
+
+.datav-gui .gui-field-controller .gui-field-image-select-component .gui-field-image-select .image-select-replace {
+	height: 100%;
+	width: 100%;
+	line-height: 107px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-align: center;
+	background: rgba(0, 0, 0, .6)
+}
+
+.datav-gui .gui-field-controller .gui-field-image-select-component .gui-field-image-select .image-select-replace .image-replace {
+	font-size: 26px
+}
+
+.datav-gui .gui-field-controller .gui-field-numbers-component .gui-field-numbers .gui-field-numbers-single {
+	width: 50%;
+	display: inline-block;
+	margin-top: 8px;
+	box-sizing: border-box
+}
+
+.datav-gui .gui-field-controller .gui-field-numbers-component .gui-field-numbers .gui-field-numbers-single .gui-field-numbers-single-name {
+	padding-left: 5px;
+	color: #647279;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.datav-gui .gui-field-controller .gui-field-numbers-component .gui-field-numbers .gui-field-numbers-single .gui-field-component {
+	width: 90px
+}
+
+.datav-gui .gui-field-controller .gui-field-numbers-component .gui-field-numbers .gui-field-numbers-single:nth-child(even) {
+	padding-left: 5px
+}
+
+.datav-gui .gui-field-controller .gui-field-numbers-component .gui-field-numbers .gui-field-numbers-single:first-child,
+.datav-gui .gui-field-controller .gui-field-numbers-component .gui-field-numbers .gui-field-numbers-single:nth-child(2) {
+	margin-top: 0
+}
+
+.datav-gui .gui-field-controller .gui-component-select {
+	width: 175px
+}
+
+.datav-gui .gui-field-controller .gui-component-select .select-input .select-input-text {
+	width: 150px!important
+}
+
+.datav-gui .gui-field-controller .gui-component-select .select-list {
+	width: 175px
+}
+
+.datav-gui .gui-field-controller .gui-component-select .select-list.active {
+	z-index: 3
+}
+
+.datav-gui .gui-group-container>.gui-controller:first-child {
+	border-top: none
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs {
+	position: relative;
+	height: 26px;
+	padding: 0 0 6px 0;
+	border-bottom: 1px solid #282f3a;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs .tabs {
+	width: 248px;
+	height: 22px;
+	overflow: hidden;
+	position: relative;
+	top: 2px;
+	transform: translateX(0)
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs .tabs>div {
+	width: max-content;
+	display: inline-block;
+	transition: transform .2s
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs .tabs>div .tab {
+	min-width: 32px;
+	max-width: 100%;
+	padding: 0 15px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .2s
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs .tabs>div .tab.gui-array-selected {
+	color: #00baff
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs .tabs>div .tab.gui-array-selected>span::before {
+	opacity: 1
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs .tabs>div .tab>span {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 100%
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs .tabs>div .tab>span::before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	bottom: -5px;
+	height: 4px;
+	width: 4px;
+	border-radius: 1px;
+	background: #00baff;
+	opacity: 0;
+	transition: all .2s
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-tabs .tabs>div .tab .gui-note {
+	margin-left: 2px
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-content {
+	transition: all .2s
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-content>.gui-controller>.gui-group-container {
+	padding-left: 0
+}
+
+.datav-gui .gui-array-controller .gui-array-container .gui-array-container-content>.gui-controller>.gui-group-container>.gui-controller {
+	border: none
+}
+
+.datav-gui .gui-array-controller .gui-array-add,
+.datav-gui .gui-array-controller .gui-array-delete {
+	width: 20px;
+	line-height: 20px;
+	position: absolute;
+	top: 9px;
+	text-indent: 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block
+}
+
+.datav-gui .gui-array-controller .gui-array-add {
+	right: 27px;
+	font-size: 14px;
+	transition: all .2s
+}
+
+.datav-gui .gui-array-controller .gui-array-add:hover {
+	transform: rotate(90deg)
+}
+
+.datav-gui .gui-array-controller .gui-array-delete {
+	right: 7px
+}
+
+.datav-gui .gui-object-controller .gui-object-name {
+	text-indent: 0
+}
+
+.datav-gui .gui-object-controller .gui-field-controller {
+	border-top: none;
+	margin-left: 0
+}
+
+.datav-gui .gui-object-controller .gui-field-controller .gui-field-name {
+	font-size: 12px;
+	color: #bcc9d4
+}
+
+.datav-gui .gui-controller-level-0.gui-field-controller {
+	padding: 6px 10px 6px 18px
+}
+
+.datav-gui .gui-controller-level-0>.gui-group-name:hover {
+	color: #fff
+}
+
+.datav-gui .gui-controller-level-0>.gui-group-name:active {
+	background: #15171c
+}
+
+.datav-gui .gui-controller-level-0 .gui-group-name .gui-note {
+	margin-left: 5px
+}
+
+.datav-gui .gui-controller-level-0>.gui-group-container {
+	border-bottom: 1px solid #282f3a
+}
+
+.datav-gui .gui-controller-level-1 .gui-group-name,
+.datav-gui .gui-controller-level-2 .gui-group-name,
+.datav-gui .gui-controller-level-3 .gui-group-name,
+.datav-gui .gui-controller-level-4 .gui-group-name {
+	border-bottom: none;
+	background: 0 0;
+	font-size: 12px;
+	height: 24px;
+	line-height: 24px
+}
+
+.datav-gui .gui-controller-level-1 .gui-group-name .gui-note,
+.datav-gui .gui-controller-level-2 .gui-group-name .gui-note,
+.datav-gui .gui-controller-level-3 .gui-group-name .gui-note,
+.datav-gui .gui-controller-level-4 .gui-group-name .gui-note {
+	margin-left: 5px
+}
+
+.datav-gui .gui-controller-level-1 .gui-group-name .show,
+.datav-gui .gui-controller-level-2 .gui-group-name .show,
+.datav-gui .gui-controller-level-3 .gui-group-name .show,
+.datav-gui .gui-controller-level-4 .gui-group-name .show {
+	right: 1px
+}
+
+.datav-gui .gui-controller-level-1 .gui-group-container,
+.datav-gui .gui-controller-level-2 .gui-group-container,
+.datav-gui .gui-controller-level-3 .gui-group-container,
+.datav-gui .gui-controller-level-4 .gui-group-container {
+	padding-right: 0;
+	padding-bottom: 0
+}
+
+.datav-gui .gui-controller-level-1 .gui-array-container,
+.datav-gui .gui-controller-level-2 .gui-array-container,
+.datav-gui .gui-controller-level-3 .gui-array-container,
+.datav-gui .gui-controller-level-4 .gui-array-container {
+	padding-bottom: 6px
+}
+
+.datav-gui .gui-controller-level-1.gui-object-controller,
+.datav-gui .gui-controller-level-2.gui-object-controller,
+.datav-gui .gui-controller-level-3.gui-object-controller,
+.datav-gui .gui-controller-level-4.gui-object-controller {
+	border: none
+}
+
+.datav-gui .gui-controller-level-1 .gui-group-name {
+	padding-left: 2px
+}
+
+.datav-gui .gui-controller-level-2,
+.datav-gui .gui-controller-level-3,
+.datav-gui .gui-controller-level-4 {
+	border-left: 1px solid #282f3a
+}
+
+.datav-gui .gui-controller-level-2.gui-group-controller,
+.datav-gui .gui-controller-level-3.gui-group-controller,
+.datav-gui .gui-controller-level-4.gui-group-controller {
+	padding-left: 7px
+}
+
+.datav-gui .gui-controller-level-2.gui-field-controller,
+.datav-gui .gui-controller-level-3.gui-field-controller,
+.datav-gui .gui-controller-level-4.gui-field-controller {
+	border-top: none;
+	padding-left: 10px
+}
+
+.datav-gui .gui-controller-level-2 .gui-field-name,
+.datav-gui .gui-controller-level-3 .gui-field-name,
+.datav-gui .gui-controller-level-4 .gui-field-name {
+	font-size: 12px;
+	color: #bcc9d4
+}
+
+.datav-gui .gui-controller-level-2 .gui-field-name .gui-note,
+.datav-gui .gui-controller-level-3 .gui-field-name .gui-note,
+.datav-gui .gui-controller-level-4 .gui-field-name .gui-note {
+	margin-left: 5px
+}
+
+.datav-gui .gui-field-image-options {
+	position: absolute;
+	z-index: 2;
+	right: 0
+}
+
+.datav-gui .gui-field-image-options .image-options {
+	position: relative;
+	width: 240px;
+	max-height: 216px;
+	padding: 10px 10px 0;
+	background: #1d262e;
+	border: 1px solid #3a4659;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .59);
+	overflow-y: auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between
+}
+
+.datav-gui .gui-field-image-options .image-options .image-option {
+	width: 73px;
+	margin-bottom: 10px
+}
+
+.datav-gui .gui-field-image-options .image-options .image-option img {
+	width: 100%;
+	height: 41px;
+	box-sizing: border-box
+}
+
+.datav-gui .gui-field-image-options .image-options .image-option .selected {
+	border: 1px solid #00baff
+}

@@ -1,0 +1,270 @@
+#app{
+    height: 100%;
+    background-color: #141c27;
+}
+.create-screen{
+    height: 100%;
+    background: rgba(0,51,125,.07);
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+.create-screen .top-bar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 100%;
+    background: #151b22;
+    border-bottom: 1px solid #12b3ff;
+    z-index: 10;
+    box-shadow: 0 5px 28px 0 rgba(55,126,255,.28);
+}
+.create-screen .skew-decorator{
+    cursor: pointer;
+    height: 25px;
+    width: 130px;
+    margin-top: 20px;
+    border-right: 2px solid #12b3ff;
+    border-bottom: 1px solid #12b3ff;
+    border-bottom-right-radius: 5px;
+    transform: skewX(-45deg);
+    background: #151b22;
+    transform-origin: bottom;
+    box-shadow: 0 5px 28px 0 rgba(55,126,255,.28);
+}
+.create-screen .skew-decorator::after{
+    content: ' ';
+    position: absolute;
+    left: -50px;
+    bottom: 0;
+    width: 178px;
+    height: 54px;
+    border-bottom-right-radius: 5px;
+    background: #151b22;
+}
+.create-screen .cancel-btn{
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 145px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 14px 24px;
+    transition: .2s;
+}
+.creator-wp{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+/*左侧*/
+.creator-wp .template-list{
+    width: 329px;
+    min-width: 329px;
+    height: 100%;
+    overflow-y: scroll;
+}
+.creator-wp .template-list::-webkit-scrollbar{
+    display: none;
+}
+.template-selector{
+    width: 100%;
+    padding-top: 75px;
+}
+.template-selector .template-selector-item{
+    cursor: pointer;
+    padding: 0 24px;
+    margin: 17px 0;
+    width: 100%;
+    color: #bcc9d4;
+    overflow: hidden;
+    display: block;
+    transition: .2s ease-out;
+}
+.template-selector .template-selector-item:hover{
+    color: RGB(0,186,255);
+    transform: translateX(8px);
+}
+.template-selector .template-selector-item.selected{
+    transform: translateX(21px);
+}
+.template-selector .template-thumbnail-wp{
+    position: relative;
+    display: block;
+    float: left;
+}
+.template-selector .template-thumbnail, .template-selector .template-thumbnail-wp{
+    width: 140px;
+    height: 79px;
+}
+.template-selector .template-thumbnail-wp::after{
+    content: ' ';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 200%;
+    width: 200%;
+    border: 1px solid #9b9ea0;
+    transform: scale(.5);
+    transform-origin: 0 0;
+}
+.template-selector .template-selector-item:first-child .template-thumbnail-wp{
+    box-shadow: inset 0 0 46px 0 rgba(136,215,255,.45);
+}
+.template-selector .template-selector-item:first-child .template-thumbnail{
+    display: none;
+}
+.template-selector .template-selector-item:first-child .template-thumbnail-wp::after{
+    border-color: #9fe8ff;
+    border-radius: 0 1px 0 1px;
+}
+/*图片旁描述文字*/
+.template-selector .template-desc{
+    padding-left: 148px;
+    width: 100%;
+    height: 100%;
+    /* color: #c3c5c6; */
+}
+.template-selector .template-selector-item .desc-name{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2px;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.template-selector .template-selector-item:first-child .desc-name{
+    /* color: #fff; */
+}
+.template-selector .template-selector-item .name-text{
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.template-selector .template-selector-item .right-arrow{
+    position: relative;
+    display: flex-box;
+    margin-left: 6px;
+    height: 0;
+    width: 0;
+    border-left: 10px solid #00d3f1;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    opacity: 0;
+}
+.template-selector .template-selector-item .right-arrow::before{
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: -5px;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-left: 3px solid #141c27;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+.template-selector .template-selector-item.selected .right-arrow{
+    opacity: 1;
+}
+.template-selector .template-desc .desc-info{
+    font-size: 12px;
+    line-height: 17px;
+    /* color: #bcc9d4; */
+    font-size: 14px;
+    font-family: Orbitron-Bold,PingFangSC-Medium,PingFang SC,Microsoft YaHei,Arial,Helvetica,sans-serif;
+}
+.template-selector .template-selector-item.selected .desc-info,
+.template-selector .template-selector-item.selected .desc-name{
+    color: #00baff;
+}
+/*右侧预览图*/
+.creator-wp .template-preview{
+    height: 100%;
+    width: 100%;
+    min-width: 740px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.creator-wp .template-preview .preview-title{
+    margin-top: 63px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+.preview-content{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    padding: 0 24px 30px 24px;
+    overflow: hidden;
+    /* opacity: 0; */
+}
+.preview-content .preview-wrapper{
+    /* width: 606px;
+    height: 479px; */
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    transition: .2s linear;
+}
+.preview-content .preview-img-wp{
+    position: relative;
+    font-size: 0;
+    border: 1px solid #12b3ff;
+    overflow: hidden;
+}
+.preview-content .preview-img{
+    width: 100%;
+}
+.preview-content .preview-img-mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: .2s ease;
+}
+.preview-content .preview-img-mask:hover{
+    background: rgba(0,0,0,.52);
+}
+.preview-content .preview-img-mask:hover button{
+    opacity: 1;
+}
+.preview-content .create-btn{
+    width: 124px;
+}
+.preview-content .preview-img-mask .create-btn{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    transition: .2s ease;
+}
+.preview-content .preview-info{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: PingFangSC-Regular,PingFang SC,Microsoft YaHei,Arial,Helvetica,sans-serif;
+}
+.preview-content .preview-info .preview-desc{
+    color: #bcc9d4;
+    font-size: 14px;
+}

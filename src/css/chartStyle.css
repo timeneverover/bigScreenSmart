@@ -1,0 +1,366 @@
+.flex-common {
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+.handler-common {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute
+}
+
+.handler-common .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.hovered .handler-common .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.transform-handler {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	cursor: move
+}
+
+.transform-handler.hide>.transform-bg,
+.transform-handler.hide>i[class$="-handler"] {
+	display: none
+}
+
+.transform-handler.hide>.transform-bg .control-point,
+.transform-handler.hide>i[class$="-handler"] .control-point {
+	display: none
+}
+
+.transform-handler .transform-bg {
+	background: rgba(0, 231, 255, .11);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	cursor: move
+}
+
+.transform-handler .center-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%)
+}
+
+.transform-handler .center-point .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .center-point .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.transform-handler .rotate-handler {
+	cursor: url(../assets/rotate.png) 14 14, pointer
+}
+
+.transform-handler .top-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -5px;
+	width: 100%;
+	height: 11px
+}
+
+.transform-handler .top-handler .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .top-handler .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.hovered .transform-handler .top-handler::after {
+	content: "";
+	height: 1px;
+	background: #05ddff;
+	width: 100%;
+	position: absolute;
+	z-index: 1
+}
+
+.transform-handler .bottom-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: -5px;
+	width: 100%;
+	height: 11px
+}
+
+.transform-handler .bottom-handler .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .bottom-handler .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.hovered .transform-handler .bottom-handler::after {
+	content: "";
+	height: 1px;
+	background: #05ddff;
+	width: 100%;
+	position: absolute;
+	z-index: 1
+}
+
+.transform-handler .left-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: -5px;
+	width: 11px;
+	height: 100%
+}
+
+.transform-handler .left-handler .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .left-handler .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.hovered .transform-handler .left-handler::after {
+	content: "";
+	width: 1px;
+	background: #05ddff;
+	height: 100%;
+	position: absolute;
+	z-index: 1
+}
+
+.transform-handler .right-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	right: -5px;
+	width: 11px;
+	height: 100%
+}
+
+.transform-handler .right-handler .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .right-handler .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.hovered .transform-handler .right-handler::after {
+	content: "";
+	width: 1px;
+	background: #05ddff;
+	height: 100%;
+	position: absolute;
+	z-index: 1
+}
+
+.transform-handler .top-right-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	height: 11px;
+	width: 11px
+}
+
+.transform-handler .top-right-handler .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .top-right-handler .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.transform-handler .top-right-handler .rotate-handler {
+	padding-top: 21px;
+	padding-right: 21px
+}
+
+.transform-handler .top-left-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: -15px;
+	top: -15px;
+	height: 11px;
+	width: 11px
+}
+
+.transform-handler .top-left-handler .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .top-left-handler .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.transform-handler .top-left-handler .rotate-handler {
+	padding-top: 21px;
+	padding-left: 21px
+}
+
+.transform-handler .bottom-left-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: -15px;
+	left: -15px;
+	height: 11px;
+	width: 11px
+}
+
+.transform-handler .bottom-left-handler .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .bottom-left-handler .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.transform-handler .bottom-left-handler .rotate-handler {
+	padding-bottom: 21px;
+	padding-left: 21px
+}
+
+.transform-handler .bottom-right-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: -15px;
+	right: -15px;
+	height: 11px;
+	width: 11px
+}
+
+.transform-handler .bottom-right-handler .control-point {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px
+}
+
+.selected .transform-handler .bottom-right-handler .control-point::after {
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 2
+}
+
+.transform-handler .bottom-right-handler .rotate-handler {
+	padding-bottom: 21px;
+	padding-right: 21px
+}

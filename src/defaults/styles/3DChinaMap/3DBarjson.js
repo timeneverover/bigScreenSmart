@@ -1,0 +1,142 @@
+{
+  "id": "3DChinaBar",
+  "name": "3D中国地图柱状图层",
+  "version": "V1.0.0",
+  "type": "isMapComponents",
+  "properties": [{
+    "name": "柱体样式",
+    "editable": "0",
+    "properties": [{
+      "name": "填充色",
+      "hasChild": false,
+      "editable": "0",
+      "type": "color",
+      "value": "#13e8ef"
+    }, {
+      "name": "透明度",
+      "hasChild": false,
+      "type": "range",
+      "value": 0.7,
+      "minValue": 0,
+      "maxValue": 1,
+      "step": 0.02
+    }, {
+      "name": "四边圆角度",
+      "hasChild": false,
+      "type": "range",
+      "value": 0.2,
+      "minValue": 0,
+      "maxValue": 1,
+      "step": 0.02
+    }, {
+      "name": "柱子粗细",
+      "hasChild": false,
+      "editable": "0",
+      "type": "number",
+      "value": 1,
+      "minValue": 0,
+      "maxValue": 30,
+      "step": 1
+    }]
+  }, {
+    "name": "标签样式",
+    "editable": "1",
+    "properties": [{
+      "name": "标签颜色",
+      "hasChild": false,
+      "editable": "0",
+      "type": "color",
+      "value": "#FFFFFF"
+    }, {
+      "name": "字号",
+      "hasChild": false,
+      "editable": "0",
+      "type": "number",
+      "minValue": 0,
+      "maxValue": 100,
+      "value": 12,
+      "step": 0.5
+    }, {
+      "name": "字体粗细",
+      "hasChild": false,
+      "type": "select",
+      "value": "normal",
+      "selectData": ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
+    }, {
+      "name": "标签字体",
+      "hasChild": false,
+      "editable": "0",
+      "iconName": "fa-question-circle-o",
+      "type": "select",
+      "value": "微软雅黑",
+      "selectData": ["微软雅黑", "宋体", "黑体", "隶书", "幼圆", "tahoma", "arial", "sans-serif"],
+      "iconHover": "请选择您系统有的字体,如果您系统无此字体,标题将会显示默认字体"
+    }, {
+      "name": "标注字段",
+      "hasChild": false,
+      "editable": "0",
+      "type": "select",
+      "value": "name",
+      "selectData": ["name", "value", "name and value"]
+    }]
+  }, {
+    "name": "高亮柱体样式",
+    "editable": "0",
+    "properties": [{
+      "name": "柱体填充色",
+      "hasChild": false,
+      "editable": "0",
+      "type": "color",
+      "value": "#13e8ef"
+    }, {
+      "name": "透明度",
+      "hasChild": false,
+      "type": "range",
+      "value": 0.7,
+      "minValue": 0,
+      "maxValue": 1,
+      "step": 0.02
+    }]
+  }, {
+    "name": "高亮标签样式",
+    "editable": "1",
+    "properties": [{
+      "name": "标签颜色",
+      "hasChild": false,
+      "editable": "0",
+      "type": "color",
+      "value": "#FFFFFF"
+    }, {
+      "name": "字号",
+      "hasChild": false,
+      "editable": "0",
+      "type": "number",
+      "minValue": 0,
+      "maxValue": 100,
+      "value": 12,
+      "step": 0.5
+    }, {
+      "name": "字体粗细",
+      "hasChild": false,
+      "type": "select",
+      "value": "normal",
+      "selectData": ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
+    }, {
+      "name": "标签字体",
+      "hasChild": false,
+      "editable": "0",
+      "iconName": "fa-question-circle-o",
+      "type": "select",
+      "value": "微软雅黑",
+      "selectData": ["微软雅黑", "宋体", "黑体", "隶书", "幼圆", "tahoma", "arial", "sans-serif"],
+      "iconHover": "请选择您系统有的字体,如果您系统无此字体,标题将会显示默认字体"
+    }, {
+      "name": "标注字段",
+      "hasChild": false,
+      "editable": "0",
+      "type": "select",
+      "value": "name",
+      "selectData": ["name", "value", "name and value"]
+    }]
+  }]
+}

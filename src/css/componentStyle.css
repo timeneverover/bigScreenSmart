@@ -1,0 +1,411 @@
+.center-wrapper{
+	width: 100%;
+    height: 100%;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    overflow: hidden;
+}
+.center-wrapper a{
+	text-decoration:none;
+	white-space:nowrap;
+
+}
+.freamDiv{
+	width:100%;
+	height:100%;
+}
+.datav-wraper.freamDiv:hover i{
+	font-size:40px;
+	display:block;
+
+}
+/* 跑马灯 */
+@keyframes horsequee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-33.3%);
+	}
+}
+
+.horseDiv {
+	 display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    position: relative;
+}
+
+.horseDiv .horseContent {
+	animation-name: horsequee;
+	animation-duration: 8000ms;
+	animation-timing-function: linear;
+	animation-delay: 1000ms;
+	animation-iteration-count: infinite;
+	display: inline-block;
+    position: relative;
+    padding-right: 0px;
+    white-space: nowrap;
+}
+.horseContent a{
+	margin-right:160px;
+}
+/* tabStyle */
+.datav-tabs {
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	overflow: hidden
+}
+
+.datav-tabs .datav-tabs__nav {
+	width: 100%;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	height: 30px;
+	line-height: 30px;
+	font-size: 0
+}
+
+.datav-tabs .datav-tabs__tab {
+	flex: 1;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	background: #27343e;
+	transition: .2s;
+	outline: 0;
+	color: #bcc9d4;
+	font-size: 12px;
+	cursor: pointer;
+	border-top: 2px solid transparent
+}
+
+.datav-tabs .datav-tabs__tab.--actived {
+	background: #1c1f25;
+	color: #00baff;
+	border-top: 2px solid #00baff
+}
+
+.datav-tabs .datav-tabs__tab.--disabled {
+	cursor: not-allowed
+}
+
+.datav-tabs .datav-tabs__content-wrapper {
+	height: 100%;
+	margin-top: -30px;
+	padding-top: 30px
+}
+
+.datav-tabs .datav-tab-panel {
+	background: #1c1f25;
+	width: 100%;
+	height: 100%
+}
+
+.gui-note {
+	position: relative;
+	display: inline-block;
+	text-indent: 0
+}
+
+.gui-note .description {
+	font-size: 12px
+}
+
+.note-content {
+	position: fixed;
+	padding: 0;
+	width: 180px;
+	z-index: 20;
+	color: #fff
+}
+
+.note-content>div {
+	display: inline-block;
+	max-width: 100%;
+	padding: 8px;
+	background: #0d5b7a;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .15);
+	line-height: 17px;
+	border: 1px solid #00baff
+}
+/* 轮播饼图 */
+@keyframes rotate-x {
+    15% {
+        transform: scaleX(0);
+    }
+	50%{
+		transform: scaleX(1);
+	}
+    /* 100% {
+        transform: scaleX(1);
+    } */
+}
+@-webkit-keyframes rotate-x {
+    15% {
+        transform: scaleX(0);
+    }
+	50%{
+		transform: scaleX(1);
+	}
+    /* 100% {
+        transform: scaleX(1);
+    } */
+}
+/* sourceDiv */
+.sourceDiv{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: none;
+}
+.sourceDiv.borders{
+	border-style: solid;
+	border-width: 71px 23px;
+	border-image-source: url('../assets/border/border1.png');
+	border-image-slice: 71 23;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: repeat;
+}
+.sourceDiv.decorates{
+	background-image: url('../assets/decorate/gif1.gif');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.sourceDiv.backgrounds{
+	border: none;
+    border-radius: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.5);
+    filter: blur(2px);
+}
+.sourceDiv .bg-inner{
+	width: 100%;
+	height: 100%;
+	background: none;
+}
+/* 轮播列表 */
+.moveList,
+.moveBarList{
+	font-family: "Microsoft Yahei";
+	cursor: pointer;
+	background-color: transparent;
+	overflow: hidden;
+}
+.moveList .list-header,
+.moveBarList .list-header{
+	position: relative;
+	height: 40px;
+	display: flex;
+	vertical-align: middle;
+	align-items: center;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: rgb(0, 186, 255);
+	z-index: 1;
+}
+.moveList .list-content-box,
+.moveBarList .list-content-box{
+	position: relative;
+}
+.moveList .list-index,
+.moveBarList .list-index{
+	width: 12%;
+	height: 100%;
+    vertical-align: middle;
+	display: inline-block;
+}
+.moveList .column-title,
+.moveBarList .column-title{
+	width: 20%;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: middle;
+	background-color: transparent;
+}
+.moveList .marquee-text,
+.moveBarList .marquee-text{
+	display: inline-block;
+}
+.moveList .marquee-text span,
+.moveBarList .marquee-text span{
+	display: inline-block;
+}
+.moveList .marquee-text i,
+.moveBarList .marquee-text i{
+	width: 0;
+	display: inline-block;
+}
+.moveList .list-content,
+.moveBarList .list-content{
+	height: 32px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+
+}
+.moveList .list-content:nth-child(even){
+	background-color: rgb(0, 59, 81);
+}
+.moveList .list-content:nth-child(odd){
+	background-color: rgb(10, 39, 50);
+}
+.moveBarList .list-content:nth-child(even),
+.moveBarList .list-content:nth-child(odd) {
+	background-color: transparent;
+}
+.moveList .content-index,
+.moveBarList .content-index{
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	width: 12%;
+	color: #ffffff;
+	font-size: 10px;
+}
+.moveList .index-bg,
+.moveBarList .index-bg{
+	background-color: #00baff;
+    font-weight: normal;
+    width: 15.2px;
+    height: 15.2px;
+    line-height: 15.2px;
+    vertical-align: middle;
+    margin: auto;
+    border-radius: 50%;
+    text-align: center;
+}
+.moveBarList .index-bg{
+	margin: 0;
+	text-align: left;
+	background-color: transparent;
+}
+.moveList .column-content,
+.moveBarList .column-content{
+	width: 20%;
+	display: inline-block;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: middle;
+	background-color: transparent;
+	font-size: 12px;
+	color: rgba(255,255,255,0.8);
+	font-weight: normal;
+}
+.moveBarList .column-name{
+	width: 68%;
+}
+.moveBarList .column-value{
+	width: 20%;
+	text-align: right;
+}
+.moveList .column-content span,
+.moveBarList .column-content span{
+	display: inline-block;
+}
+/* 轮播列表柱状图 */
+.barBox{
+    width: 100%;
+    height: 4px;
+    /* background: #0064ff3b; */
+    position: relative;
+	border-bottom: 0.5px solid #0a5b79;
+}
+.bar{
+    height: 100%;
+    background: #00BAFF;
+    width: 50%;
+    position: absolute;
+}
+.light{
+    position: absolute;
+	margin-top: -1px;
+	/* top: 50%; */
+	left: 0;
+	bottom: 0;
+    width: 35px;
+    height: 2px;
+    background: #28F8FF;
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px 1px #28F8FF;
+    opacity: 0.5;
+}
+.vertical-flip{
+	/* animation: vertical-flip 1.5s linear; */
+}
+@keyframes vertical-flip {
+	60%{
+		transform: rotateX(90deg);
+	}
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+@-webkit-keyframes vertical-flip {
+	60%{
+		transform: rotateX(90deg);
+	}
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+@keyframes run-right {
+	0%{
+		left: 0;
+	}
+    100% {
+        left: 100%;
+    }
+}
+@-webkit-keyframes run-right {
+	0%{
+		left: 0;
+	}
+    100% {
+        left: 100%;
+    }
+}
+
+/**
+ * 时间选择器
+ */
+.time_pickr{
+	width: 100%;
+	height: 100%;
+	  display:flex;
+   align-items: center;
+   justify-content: center;
+  position:relative;
+  font-size:16px;
+  padding-top:1%
+}
+.date_pickr{
+  width:40%;
+  border:1px solid #4271B0;
+  border-radius:5px;
+  height:80%;
+  background: transparent;
+ text-align: center;
+}
+.time_delimiter{
+	margin:0px 10px;
+}

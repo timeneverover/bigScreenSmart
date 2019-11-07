@@ -1,0 +1,61 @@
+.wheel_img {
+	position: absolute;
+	overflow: hidden;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	width:100%;
+	height:100%;
+	left:0px;
+	top:0px;
+}
+
+.wheel_dot {
+	position: absolute;
+	bottom: 10px;
+	opacity: 0.5;
+	z-index:30;
+}
+
+.wheel_dot div {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #fff;
+	margin-right:10px;
+}
+.wheel_dot div:last-child{
+	margin-right:0px;
+}
+.wheel_dot .active{
+	background: #70B075;
+}
+.wheel_content{
+	position: relative;
+}
+.wheel_img .wheel_img_div{
+	position: relative;
+      width: 100%;
+      height: 100%;
+}
+ .created {
+  overflow: hidden;
+  position: absolute;
+  z-index: 20;
+}
+.wheel_title{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	top: 0px;
+	left:0px;
+	color:#ffffff;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	font-weight:normal;
+	width: 100%;
+	height: 10%;
+	background: linear-gradient(90deg, RGBA(19,68,88,0.25), RGBA(231,229,229,0.9));;
+}
