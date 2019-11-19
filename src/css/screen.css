@@ -336,6 +336,10 @@
 .components-lists-wrap .chart-wrap .chart-box .chart-img img {
 	width: 100%;
 	background: #282a2ff5;
+	background: #303237;
+}
+.components-lists-wrap .chart-wrap .chart-box .chart-img.sankey img.sankey {
+	background: #303237;
 }
 
 .components-lists-wrap .chart-wrap .chart-box .chart-img {

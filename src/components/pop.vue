@@ -655,7 +655,7 @@
 								this.tips.open('error', '域名不能为空');
 								return;
 							}else if(this.popObj.data2.paramdata==""){
-								this.tips.open('error', '域名不能为空');
+								this.tips.open('error', '参数不能为空');
 								return;
 							}else{
 								var item = {},
@@ -767,9 +767,14 @@
 						if(obj.url==''){
 							this.tips.open('error', 'url不能为空');
 							return;
+						}else if(obj.paramdata==""){
+							this.tips.open('error', '参数不能为空');
+							return;
 						}else{
 							var item = {};
 							item.url = obj.url;
+							item.type = obj.type;
+							item.paramdata = obj.paramdata;
 							this.$store.dispatch('testHttpConnect', item);
 						}
 					}else if(obj.data_type=='ws'){

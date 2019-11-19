@@ -528,10 +528,9 @@ export default {
 		for(let i=0;i<len;i++){
 			let index = getIndex(allList, 'attr_id', data[i].attr_id)
 			allList[index].data=[].concat(data[i].data_value)
-			
+
 		}
 		state.allPreviewData=[].concat(allList)
-		console.log('mution--')
   }
 
 };

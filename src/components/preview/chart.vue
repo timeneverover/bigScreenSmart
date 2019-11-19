@@ -157,6 +157,7 @@
 	import wheelPlantUtil from '@/components/setOption/text/wheelPlantUtil.js'
 	import mapJson from '@/components/setOption/map/mapJson.js'
 	import selectionView from '@/components/selections.vue'
+	import sankeyUtil from '@/components/setOption/sankeyUtil.js'
 	export default {
 		props: ['chartData'],
 		components: {
@@ -198,13 +199,12 @@
 		watch:{
 			chartData:{ // 数据监听
 				handler(newValue, oldValue) {　
-					console.log('chartDom:'+this.chartIndex)
 					if(this.chartIndex != 0) { // 初始化的时候不调用该方法，因为在mounted中已渲染
 						this.setChartOptionAttr(newValue)
 					}　
 					this.chartIndex++
 				},
-				immediate: true, 
+				immediate: true,
 				deep: true
 			}
 		},
@@ -349,15 +349,13 @@
 				console.log('WebSocket连接发生错误')
 			},
 			websocketonmessage(e) { // 数据接收
-//				console.log('socket onmessage:' + e.data)
+				// console.log('socket onmessage:' + e.data)
 				if(e.data != "连接成功" && e.data != '') {
 					let data = JSON.parse(e.data)
 					//添加地图子组件数据限制
 					if(this.mapComIndex){
-						// console.log('地图子组件')
 						this.chartData.attrArr[this.mapComIndex].data_descr.datas.data_value = data
 					}else{
-						// console.log('其他父组件')
 						this.chartData.data = data
 					}
 					this.setChartOptionAttr(this.chartData)
@@ -395,14 +393,12 @@
 				item[this.chartData.mapped[0].name]=this.configPickr.defaultStart
 				item[this.chartData.mapped[1].name]=this.configPickr.defaultEnd
 				item.attr_id=this.chartData.attr_id
-				console.log(JSON.stringify(item))
 				this.postClickToService(item)
 			},
 			selectChanged(){ // 下拉框选择器选择事件
 				let item={}
 				item[this.chartData.mapped[0].name]=this.selectTarget
 				item.attr_id=this.chartData.attr_id
-				console.log(JSON.stringify(item))
 				this.postClickToService(item)
 			},
 			setChartOptionAttr(currentChartData) {
@@ -419,7 +415,6 @@
 				if(cname == '基本折线图' || cname == '散点图' || cname == '气泡图') {
 					type = attrs[2].properties[1].fieldData[0].value
 				}
-				console.log(cname)
 				let _this = this;
 				if(chartType=='isSource'){
 					if(cname=="边框"){
@@ -690,6 +685,8 @@
 						options = chartBarUtil.setOption(attrs,datas);
 					}else if(cname=="双轴折线图"){
 						options = doublChartUtil.setOption(attrs,datas);
+					}else if(cname=="桑基图"){
+						options = sankeyUtil.setOption(attrs,datas);
 					}else {
 						let seriesLength = '',seriesArr=[]
 						let yDatas1 = datas.sdata
@@ -735,31 +732,12 @@
 							}
 						}
 						let ydataLen = yDatas.length
-						/*if(ydataLen > seriesLength) {
-							for(let yl = seriesLength; yl < ydataLen; yl++) {
-								let index = yl % seriesLength
-								let series = JSON.parse(JSON.stringify(options.series[0]))
-								series.data = yDatas[yl]
-								series.name=types[yl]
-								let cc=y1%10
-								let color=this.basicColor[cc]
-								if(cname == '基本折线图') {
-									series.areaStyle.color='transparent'
-									series.lineStyle.color=color
-									series.itemStyle.color=color
-								} else if(cname == '散点图'|| cname == '气泡图') {
-									series.itemStyle.normal.borderColor=color
-									series.itemStyle.normal.color=color
-								}
-								options.series.push(series)
-							}
-						}*/
 					}
 					options.grid.zlevel = this.chartData.sort
 					this.chartDom.clear()
 					this.chartDom.setOption(options, true)
  				}
-				
+
 				if(openflag=='true'){
 					this.setChartClick(currentChartData,type,sourceDiv)
 				}
@@ -797,7 +775,6 @@
 						sourceDiv.find('a').on('click',function(){
 							item[mapped[0].name]=$(this).text()
 							item.attr_id=chartId
-							console.log(JSON.stringify(item))
 							_this.postClickToService(item)
 						})
 					}else if(name=='视频'){
@@ -806,7 +783,6 @@
 							item[mapped[0].name]=$(this).find('.item_content').text()
 							item[mapped[1].name]=$(this).attr('attr-id')
 							item.attr_id=chartId
-							console.log(JSON.stringify(item))
 							_this.postClickToService(item)
 						})
 					}else if(name=='数字翻牌器'){
@@ -817,7 +793,6 @@
 							item[mapped[2].name]=$(this).find('.pre_num_div').text()
 							item[mapped[3].name]=$(this).find('.suf_num_div').text()
 							item.attr_id=chartId
-							console.log(JSON.stringify(item))
 							_this.postClickToService(item)
 						})
 					}else if(name=='文字标签'){
@@ -825,7 +800,6 @@
 							item[mapped[0].name]=$(this).find('span').text()
 							item[mapped[1].name]=$(this).attr('attr-id')
 							item.attr_id=chartId
-							console.log(JSON.stringify(item))
 							_this.postClickToService(item)
 						})
 					}
@@ -835,7 +809,6 @@
 						item[mapped[1].name]=params.value
 						item[mapped[2].name]=datas.stypes[params.seriesIndex]
 						item.attr_id=chartId
-						console.log(JSON.stringify(item))
 						_this.postClickToService(item)
 					})
 				}else if(type=='isDashboard'){
@@ -856,14 +829,12 @@
 								}
 							}
 						item.attr_id=chartId
-						console.log(JSON.stringify(item))
 						_this.postClickToService(item)
 						})
 				}else if(type=='isChart'||type=='isMap'){
 					let datas = chartCommon.getMappedData(arr, mapped, ctype)
 					this.chartDom.off('click')
 					this.chartDom.on('click',function(params){
-						console.log(params)
 						if(name=='基本折线图'||name=='散点图'||name=='斑马柱图'||name=='水平基本柱图'||name=='垂直基本柱图'||name=='水平胶囊柱图'||name=='垂直胶囊柱图'){
 							item[mapped[0].name]=params.name
 							item[mapped[1].name]=params.value
@@ -891,6 +862,8 @@
 									item[mapped[i].name]=ditem[mapped[i].name]
 								}
 							}
+						}else if(name=='桑基图'){
+							
 						}else if(name=='基本柱状图'||name=='弧形柱图'||name=='轮播饼图'||name=='基本饼图'||name=='标注对比饼图'||name=='带图饼图'||name=='指标对比饼图'){
 							item[mapped[0].name]=params.name
 							item[mapped[1].name]=params.value
@@ -904,7 +877,7 @@
 									item[mapped[i].name]=gdata[mapped[i].name]
 								}
 							}
-							
+
 						}else if(name=='多维度饼图'){
 							if(params.name==''){
 								return
@@ -971,7 +944,7 @@
 									item[mapped3[0].name]=mid
 									item[mapped3[1].name]=params.value
 								}else{
-									return 
+									return
 								}
 							}else{
 								return
@@ -980,7 +953,7 @@
 							let mapType=params.seriesName
 							let mid=mapJson.provinceId[params.name]
 							let mapped4=_this.getMappedArr(mapType,data)
-							
+
 							if(mapType=='底图层'){
 								item[mapped[0].name]=mid
 								item[mapped[1].name]=params.value[0]
@@ -999,7 +972,7 @@
 						_this.postClickToService(item)
 					})
 				}
-			
+
 			}
 		}
 	}

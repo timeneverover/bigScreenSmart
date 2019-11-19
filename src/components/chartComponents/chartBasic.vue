@@ -154,6 +154,7 @@
 	import textLabelUtil from '@/components/setOption/text/textLabelUtil.js'
 	import wheelPlantUtil from '@/components/setOption/text/wheelPlantUtil.js'
 	import selectionView from '@/components/selections.vue'
+	import sankeyUtil from '@/components/setOption/sankeyUtil.js'
 	export default {
 		props: ['chartAttr', 'chartIndex'],
 		components: {
@@ -288,7 +289,7 @@
 				this.basicChart = this.$echarts.init(document.getElementById(this.chartAttr.attr_id))
 			},
 			selectStart(){
-				
+
 			},
 			// 图形渲染
 			setChartOption() {
@@ -302,7 +303,6 @@
 					type2=attrs[2].properties[1].fieldData[0].value
 				}
 				let _this = this;
-				console.log('type:'+type)
 				if(this.chartAttr.attr_descr.type=='isSource'){
 					if(type=="边框"){
                         let sourceVal = attrs[1].properties[0].value;
@@ -338,7 +338,6 @@
 						_this.configPickr=JSON.parse(JSON.stringify(options))
 					}else if(type=='下拉选择器'){
 						let options=titleUtil.setSelectView(attrs,arr,mapped);
-						console.log(JSON.stringify(options))
 						_this.selectionConfig=options.config
 						_this.imgConfig=options.config2
 						_this.selectList=options.data
@@ -526,7 +525,6 @@
 					}else if(type == '基础平面地图'){
 						let attrArr = this.chartAttr.attrArr;
 						options = basicMapUtil.setOption(attrs,attrArr,sourceDiv);
-						console.log(JSON.stringify(options))
 					}else if(type == '3D平面中国地图'){
 						let datas = chartCommon.getMappedData(arr, mapped,type2)
 						let attrArr = this.chartAttr.attrArr;
@@ -553,6 +551,8 @@
 						options = chartBarUtil.setOption(attrs,datas);
 					}else if(type=="双轴折线图"){
 						options = doublChartUtil.setOption(attrs,datas);
+					}else if(type=="桑基图"){
+						options = sankeyUtil.setOption(attrs,datas);
 					}else{//x轴有日期格式
 						let seriesLength=''
 						if(type == '基本折线图') {
@@ -577,7 +577,6 @@
 						}else{
 							options.xAxis.data = xdata
 						}
-						console.log(JSON.stringify(datas))
 						let stypes=datas.stypes // 数据系列编号s
 						let sortArr=[]
 						let typeLen=stypes.length
@@ -596,16 +595,6 @@
 								options.series[i].data = []
 							}
 						}
-						/*let ydataLen = yDatas.length
-						if(ydataLen > seriesLength) {
-							for(let yl = seriesLength; yl < ydataLen; yl++) {
-								let index = yl % seriesLength
-								let series = JSON.parse(JSON.stringify(options.series[index]))
-								series.data = yDatas[yl]
-								series.name=stypes[y1]
-								options.series.push(series)
-							}
-						}*/
 					}
 					options.grid.zlevel = this.chartAttr.sort;
 					let ifOptionSame = $.trim(this.lastOption)==$.trim(JSON.stringify(options));

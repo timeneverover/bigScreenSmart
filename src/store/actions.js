@@ -618,7 +618,6 @@ export default {
   	commit
   },data){
   	 httpService.postLink(Urls.chartClickAction, data).then(function(res) {
-  	 	console.log(res)
        commit(types.CLICK_TO_LINK, JSON.parse(res));
     })
   }

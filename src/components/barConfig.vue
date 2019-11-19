@@ -139,7 +139,6 @@
                             }
                         }
                     }
-                    // console.log(data);
                     this.$store.dispatch('updateChartLink', data);
                 }
 			}

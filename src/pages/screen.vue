@@ -24,7 +24,7 @@
 						</div>
 						<div class="chart-wrap" v-show="chartWarpShow">
 							<div class="chart-box" v-for="chartData in chartDatas" @click="charImgClick(chartData)">
-								<div class="chart-img" :title="chartData.tipBoxContent">
+								<div class="chart-img" :class="chartData.tipBoxContent=='桑基图'?sankey:''" :title="chartData.tipBoxContent">
 									<img :src="imageurl+chartData.chartImgUrl" alt="" >
 								</div>
 								<p class="chart-content">{{chartData.tipBoxContent}}</p>
