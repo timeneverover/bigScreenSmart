@@ -197,7 +197,7 @@
 				}
 			},
 			sqlData(newvalue, oldvalue){ // 监听sql语句变化
-				if(this.dataResource != 'static'){
+				if(this.dataResource != '静态数据'){
 					this.resourceData.datas.data=newvalue
 				}
 			},
