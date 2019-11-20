@@ -276,7 +276,10 @@
 				}
 			},
 			sqlData(newvalue, oldvalue){ // 监听sql语句变化
-				if(this.dataResource != 'static'){
+				console.log(this.dataResource);
+				console.log(this.resourceData);
+				if(this.dataResource != '静态数据'){
+					console.log(666);
 					this.resourceData.datas.data=newvalue
 				}
 			},

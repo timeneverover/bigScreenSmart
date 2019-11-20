@@ -863,7 +863,13 @@
 								}
 							}
 						}else if(name=='桑基图'){
-							
+							if(params.data.name){
+								return
+							}else{
+								item[mapped[0].name] = params.data.source;
+								item[mapped[1].name] = params.data.target;
+								item[mapped[2].name] = params.data.value;
+							}
 						}else if(name=='基本柱状图'||name=='弧形柱图'||name=='轮播饼图'||name=='基本饼图'||name=='标注对比饼图'||name=='带图饼图'||name=='指标对比饼图'){
 							item[mapped[0].name]=params.name
 							item[mapped[1].name]=params.value
