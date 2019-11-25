@@ -17,6 +17,14 @@ export default {
 		clockwise: true,
 		min:0,
 		max:100,
+		title: {//标题样式
+            show: true,
+            offsetCenter: ['0%','80%'],
+            color: '#fff',
+            fontSize: 15,
+            fontWeight: 'normal',
+            fontFamily: 'sans-serif'
+        },
 		axisLine: {
 			show: true,
 			lineStyle: {
@@ -61,7 +69,7 @@ export default {
 			fontSize: '15',
 			formatter: '',
 			fontFamily :'sans-serif',
-			offsetCenter :[0, '50%'] 
+			offsetCenter :[0, '50%']
 		},
 		pointer: {
 			show: false,

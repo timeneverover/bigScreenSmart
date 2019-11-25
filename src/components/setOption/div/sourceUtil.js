@@ -84,7 +84,6 @@ export default {
   //装饰切换方法
   decorateSwitch(sourceVal, sourceDiv, positions) {
     let num = sourceVal.slice(3) - 1;
-    console.log(sourceVal+'  '+num)
     let imgName=''
     if(sourceVal.indexOf('png')!=-1){
     	imgName=sourceVal+'.png'
@@ -95,7 +94,7 @@ export default {
       "background-image": "url('" + require('@/assets/decorate/' + imgName) + "')",
 //    "background-position": positions[num],
       "background-size":'100% 100%'
-      
+
     });
   }
 

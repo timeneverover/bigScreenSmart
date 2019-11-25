@@ -6,19 +6,16 @@ import dashBoardData from '@/defaults/options/circleData/dashboardData.js'
 let echarts = require('echarts/lib/echarts')
 export default {
 	setOption(dashData, attrs, mapped) {
-		let options = dashBoardData
-		let mm = 'value'
-		let data = []
-		let mapp = mapped[0].value
-		if(mapp != '') {
-			mm = mapp
+		let options = dashBoardData;
+		let dataObj = {};
+		if(mapped[0].value.length>0||mapped[1].value.length>0){
+			dataObj.name = dashData[0][mapped[0].value];
+			dataObj.value = dashData[0][mapped[1].value];
+		}else{
+			dataObj.name = dashData[0].name;
+			dataObj.value = dashData[0].value;
 		}
-		if(dashData[0]) { // 后台是否传值
-			if(dashData[0].hasOwnProperty(mm)) {
-				data.push(dashData[0][mm])
-			}
-		}
-		options.series[0].data = data
+		options.series[0].data.push(dataObj);
 		options.series[0].detail.formatter=function(value){
 			return value+attrs[2].properties[0].fieldData[3].value
 		}
@@ -74,34 +71,47 @@ export default {
 			circolor = [[1, lincolor]]
 		}
 		options.series[0].axisLine.lineStyle.color =circolor
-		
+
 		options.series[0].splitLine.show=attrs[2].properties[3].editable !== "2" ? true : false
 		options.series[0].splitLine.length=attrs[2].properties[3].fieldData[0].value
 		options.series[0].splitLine.lineStyle.width=attrs[2].properties[3].fieldData[1].value
 		options.series[0].splitLine.lineStyle.color=attrs[2].properties[3].fieldData[2].value
-		
+
 		options.series[0].axisTick.show=attrs[2].properties[4].editable !== "2" ? true : false
 		options.series[0].axisTick.splitNumber=attrs[2].properties[4].fieldData[0].value
 		options.series[0].axisTick.length=attrs[2].properties[4].fieldData[1].value
 		options.series[0].axisTick.lineStyle.color=attrs[2].properties[4].fieldData[2].value
-	
+
 		options.series[0].axisLabel.show=attrs[2].properties[5].editable !== "2" ? true : false
 		options.series[0].axisLabel.fontSize=attrs[2].properties[5].fieldData[0].fieldData[0].value
 		options.series[0].axisLabel.color=attrs[2].properties[5].fieldData[0].fieldData[1].value
 		options.series[0].axisLabel.fontWeight=attrs[2].properties[5].fieldData[0].fieldData[2].value
 		options.series[0].axisLabel.distance=attrs[2].properties[5].fieldData[1].value
-		
+
 		options.series[0].pointer.show=attrs[3].editable !== "2" ? true : false
 		options.series[0].pointer.length=attrs[3].properties[0].value*100+'%'
 		options.series[0].pointer.width=attrs[3].properties[1].value
 		options.series[0].itemStyle.color=attrs[3].properties[2].value
-		
-		options.animation = attrs[4].editable != '2'
-		options.animationDuration = attrs[4].properties[0].value
-		options.animationDurationUpdate = attrs[4].properties[2].value
-		options.animationEasing = attrs[4].properties[1].value
-		options.animationDelayUpdate = attrs[4].properties[3].value 
-		
+		//标题
+		if(attrs[4].editable == '1'){
+			options.series[0].title.show = true;
+			options.series[0].title.color = attrs[4].properties[0].value;
+			options.series[0].title.fontSize = attrs[4].properties[1].value;
+			options.series[0].title.fontWeight = attrs[4].properties[2].value;
+			options.series[0].title.fontFamily = attrs[4].properties[3].value;
+			let xPosition = attrs[4].properties[4].value + '%';
+			let yPosition = attrs[4].properties[5].value + '%';
+			options.series[0].title.offsetCenter = [xPosition, yPosition];
+		}else{
+			options.series[0].title.show = false;
+		}
+		//动画
+		options.animation = attrs[5].editable != '2'
+		options.animationDuration = attrs[5].properties[0].value
+		options.animationDurationUpdate = attrs[5].properties[2].value
+		options.animationEasing = attrs[5].properties[1].value
+		options.animationDelayUpdate = attrs[5].properties[3].value
+
 		return options
 	}
 }

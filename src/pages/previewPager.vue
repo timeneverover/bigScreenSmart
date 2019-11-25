@@ -75,8 +75,10 @@
 			param.isSmartlog = this.$route.query.isSmartlog;
 			param.type = this.$route.query.type;
 			param.id = this.$route.query.id;
+			param.userid = this.$route.query.userid;
 
 			this.nowMoId = param.mo_id;
+			console.log(param);
 			//判断是否是组件来的
 			if(param.isCompent){
 				param.comId = this.$route.query.comId
@@ -103,7 +105,6 @@
 						let data = JSON.parse(e.data)
 						//判断这次的mo_id是否和上次的一样
 						if(_this.nowMoId!=data.mo_id){
-//							_this.chartsList = [];
 							_this.$store.state.allPreviewData=[]
 							TipBoxService.open('success', '正在跳往下一个模板')
 							_this.nowMoId = data.mo_id;
@@ -134,7 +135,6 @@
 				if(!param.isSmartlog){
 					param.isSmartlog = 'false';
 				}
-				console.log(param);
 				//获取模板信息
 				httpService.postLink(Urls.getTempComponents, param).then(function(res) {
 					let data = JSON.parse(res.mo_attr).propertyData
@@ -159,6 +159,11 @@
 						let attr1 = JSON.parse(res[i].attr_descr)
 						let attr2 = JSON.parse(res[i].data_descr)
 						let attr3 = JSON.parse(attr2.datas.data_value)
+						// if(attr2.datas.data_value){
+						// 	attr3 = JSON.parse(attr2.datas.data_value)
+						// }else{
+						// 	attrs = attr2.datas.data_value;
+						// }
 						let mapped = JSON.parse(attr2.mapped)
 						item.attr_id = res[i].attr_id
 						item.sort = res[i].sort
