@@ -349,7 +349,6 @@
 				console.log('WebSocket连接发生错误')
 			},
 			websocketonmessage(e) { // 数据接收
-				// console.log('socket onmessage:' + e.data)
 				if(e.data != "连接成功" && e.data != '') {
 					let data = JSON.parse(e.data)
 					//添加地图子组件数据限制

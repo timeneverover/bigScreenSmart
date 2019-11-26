@@ -1,6 +1,6 @@
 <template>
 	<div class="pop-wrap" v-show="popShow">
-		<div class="pop-mask" @click="popWindowClose"></div>
+		<div class="pop-mask"></div>
 		<div class="pop-window" :class="popObj.popName=='create'?'create-pop':''">
 			<div class="pop-title">
 				<div class="pop-title-text">

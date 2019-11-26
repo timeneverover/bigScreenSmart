@@ -412,7 +412,6 @@
 				}).then(function(canvas) {
 					$(".imageWrapper").css('transform',scaleNum)
 					let dataUrl = canvas.toDataURL("image/png");
-					console.log('image url:' + dataUrl)
 					that.coverImage = dataUrl
 					let file = that.getBlobBydataURI(dataUrl, 'image/png')
 					let timestamp = new Date().getTime();

@@ -35,18 +35,14 @@
 		},
 		watch:{
 			ifFilter(newvalue,value){
-//				this.isFilter=newvalue
 				 this.$emit('filterChange', newvalue)
 			}
 		},
 		mounted(){
 			this.ifFilter=this.isFilter==='true'||this.isFilter===true?true:false
-			console.log(this.ifFilter)
-			console.log(this.filterData)
 		},
 		methods:{
 			addFilters(){
-				console.log(JSON.stringify(this.filterData))
 				let item={
 					key:'',
 					value:''
@@ -114,14 +110,14 @@
 	margin-right: 10px;
 	position: absolute;
 	cursor: pointer;
-	width: 15px;	
+	width: 15px;
 	right: 0px;
 }
 .delete-filter{
 	font-weight: lighter;
 	font-size: 15px;
 	cursor: pointer;
-	/*width: 15px;*/	
+	/*width: 15px;*/
 	margin-left: 4px;
 }
 .data-filter-item{
