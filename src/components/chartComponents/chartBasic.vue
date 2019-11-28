@@ -554,8 +554,22 @@
 					}else if(type=="桑基图"){
 						options = sankeyUtil.setOption(attrs,datas);
 					}else{//x轴有日期格式
-						let seriesLength=''
+						let seriesLength='';
+						let seriesType = datas.stypes;// 数据系列编号s
 						if(type == '基本折线图') {
+							//在渲染图形之前改变
+							// let seriesData = JSON.parse(JSON.stringify(this.$store.state.leftEditMainData[this.chartIndex].attr_descr.properties[5]));
+							// let seriesTemp = seriesData.properties[0];
+							// seriesData.properties = [];
+							// for(let s=0;s<seriesType.length;s++){
+							// 	let temp = JSON.parse(JSON.stringify(seriesTemp));
+							// 	temp.name = '系列' + (s+1);
+							// 	temp.sid = seriesType[s];
+							// 	temp.fieldData[0].value = seriesType[s];
+							// 	console.log(temp);
+							// 	seriesData.properties.push(temp);
+							// }
+							// this.$store.state.leftEditMainData[this.chartIndex].attr_descr.properties[5] = seriesData;
 							options = chartUtil.setOption(attrs, xdata)
 							seriesLength= attrs[5].properties.length
 						} else if(type == '散点图') {
@@ -577,19 +591,16 @@
 						}else{
 							options.xAxis.data = xdata
 						}
-						let stypes=datas.stypes // 数据系列编号s
-						let sortArr=[]
-						let typeLen=stypes.length
 						for(let i = 0; i < seriesLength; i++) {
 							if(yDatas[i]) {
 								options.series[i].data = yDatas[i]
 								if(options.series[i].name==''){ // 如果系列名称为空，则显示编号s值
-									options.series[i].name=stypes[i]
+									options.series[i].name=seriesType[i]
 								}
 								if(type == '基本折线图'||type == '散点图') {
-									this.$store.state.leftEditMainData[this.chartIndex].attr_descr.properties[5].properties[i].sid=stypes[i]
+									this.$store.state.leftEditMainData[this.chartIndex].attr_descr.properties[5].properties[i].sid=seriesType[i]
 								} else if(type == '气泡图'||type=='斑马柱图') {
-									this.$store.state.leftEditMainData[this.chartIndex].attr_descr.properties[6].properties[i].sid=stypes[i]
+									this.$store.state.leftEditMainData[this.chartIndex].attr_descr.properties[6].properties[i].sid=seriesType[i]
 								}
 							} else {
 								options.series[i].data = []
