@@ -7,6 +7,7 @@ let echarts = require('echarts/lib/echarts')
 export default {
 	setOption(dashData, attrs, mapped) {
 		let options = dashBoardData;
+		options.series[0].data = [];
 		let dataObj = {};
 		if(mapped[0].value.length>0||mapped[1].value.length>0){
 			dataObj.name = dashData[0][mapped[0].value];
@@ -94,14 +95,16 @@ export default {
 		options.series[0].itemStyle.color=attrs[3].properties[2].value
 		//标题
 		if(attrs[4].editable == '1'){
-			options.series[0].title.show = true;
-			options.series[0].title.color = attrs[4].properties[0].value;
-			options.series[0].title.fontSize = attrs[4].properties[1].value;
-			options.series[0].title.fontWeight = attrs[4].properties[2].value;
-			options.series[0].title.fontFamily = attrs[4].properties[3].value;
 			let xPosition = attrs[4].properties[4].value + '%';
 			let yPosition = attrs[4].properties[5].value + '%';
-			options.series[0].title.offsetCenter = [xPosition, yPosition];
+			options.series[0].title = {
+				show: true,
+				color: attrs[4].properties[0].value,
+				fontSize: attrs[4].properties[1].value,
+				offsetCenter: [xPosition, yPosition],
+				fontWeight: attrs[4].properties[3].value,
+				fontFamily: attrs[4].properties[2].value
+			}
 		}else{
 			options.series[0].title.show = false;
 		}
@@ -111,7 +114,6 @@ export default {
 		options.animationDurationUpdate = attrs[5].properties[2].value
 		options.animationEasing = attrs[5].properties[1].value
 		options.animationDelayUpdate = attrs[5].properties[3].value
-
 		return options
 	}
 }
