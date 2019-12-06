@@ -32,6 +32,8 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
+        TipBoxService.open('fail', error);
       });
   },
   selectLeftEditMain({
@@ -49,6 +51,8 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
+        TipBoxService.open('fail', error);
       });
   },
   // 获取左边图形菜单列表
@@ -61,6 +65,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //地图添加子组件
@@ -73,6 +78,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   delMapComponent({
@@ -84,6 +90,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
 
@@ -102,6 +109,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   // 获取图形的默认属性（点击头部菜单，添加图形）
@@ -114,6 +122,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //更改创建大屏左边组件顺序(拖拽，上下移动，置顶置底)
@@ -126,6 +135,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //交换创建大屏左边组件顺序
@@ -138,6 +148,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //存储缩略图数据
@@ -157,6 +168,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //添加新的分组
@@ -179,6 +191,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //修改分组
@@ -191,6 +204,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //删除分组
@@ -203,6 +217,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //首页组件操作
@@ -216,6 +231,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //获取所有组件下可选择模板信息
@@ -228,6 +244,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //添加单个组件信息
@@ -240,6 +257,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //修改单个组件信息
@@ -252,6 +270,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //删除单个组件信息
@@ -264,6 +283,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //获取单个组件的信息
@@ -276,6 +296,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
 
@@ -290,6 +311,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //修改模板
@@ -302,6 +324,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //删除模板
@@ -314,6 +337,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //复制模板
@@ -328,6 +352,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //创建模板
@@ -349,6 +374,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
   //修改数据
@@ -367,6 +393,7 @@ export default {
       commit(types.DELETE_DATA, data)
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
   //添加新的数据
@@ -387,6 +414,7 @@ export default {
         commit(types.ADD_DATA, addData);
       }).catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       })
     } else {
       httpService.postLink(Urls.addDataUrl, data).then(function(res) {
@@ -396,6 +424,7 @@ export default {
         commit(types.ADD_DATA, addData);
       }).catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       })
     }
   },
@@ -410,6 +439,7 @@ export default {
       commit(types.ADD_DATA, addData);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
 
@@ -421,6 +451,7 @@ export default {
       commit(types.GET_ALL_DATABASE, res);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
   //测试数据源连接
@@ -437,6 +468,7 @@ export default {
       commit(types.TEST_CONNECT, res);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
   //http 测试连接接口
@@ -447,6 +479,7 @@ export default {
       commit(types.ADD_DATA, res);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
   //http 连接接口
@@ -460,6 +493,7 @@ export default {
       commit(types.ADD_DATA, addData);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
   //webSocket测试连接
@@ -470,6 +504,7 @@ export default {
       commit(types.TEST_CONNECT, res);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
 
@@ -489,6 +524,7 @@ export default {
       })
       .catch(function(error) {
         console.log(error);
+        TipBoxService.open('fail', error);
       });
   },
 
@@ -501,6 +537,7 @@ export default {
       commit(types.UPDATE_CONPONENT_ATTRIBUTE, data);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
 
   },
@@ -520,6 +557,7 @@ export default {
       commit(types.UPDATE_MODULE_ATRRTIBUTE, data, 'save');
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
 
   },
@@ -530,6 +568,7 @@ export default {
       commit(types.DELETE_MODULE_BGIMAGE, data);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
 
   },
@@ -540,6 +579,7 @@ export default {
       commit(types.UPLOAD_MODULE_BGIMAGE, res);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
 
   },
@@ -550,6 +590,7 @@ export default {
       commit(types.UPLOAD_MODULE_COVER, res);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
   resetModuleBackground({ // 恢复默认背景
@@ -559,6 +600,7 @@ export default {
       commit(types.RESET_BACKGROUND, res);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
 
   },
@@ -569,6 +611,7 @@ export default {
       commit(types.UPDATE_CHART_CONFIG, data);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
 
   },
@@ -584,6 +627,7 @@ export default {
       commit(types.UPDATA_CHART_DATA_CONFIG, item);
     }).catch(function(error) {
       console.log(error);
+        TipBoxService.open('fail', error);
     })
   },
   dataRespondResult({ // 恢复默认背景
@@ -599,7 +643,9 @@ export default {
         commit(types.RESPONSE_CHART_DATA_CONFIG, item);
       }
     }).catch(function(error) {
-      console.log(error);
+        console.log(error);
+        TipBoxService.open('fail', error);
+        TipBoxService.open('fail', error);
     })
   },
   //更新图形数据联动数据

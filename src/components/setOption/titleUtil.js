@@ -21,7 +21,7 @@ export default {
       }
     }
     //设置标题名
-    if (data != '') { // 数据配置中设置有内容
+    if (data != '' || data==0) { // 数据配置中设置有内容
       sourceDiv.find('a').text(data)
     } else {
       sourceDiv.find('a').text(titleAttrs[1].value)
@@ -165,9 +165,9 @@ export default {
   		"color":attrs[1].properties[0].fieldData[2].value,
   		"font-weight":attrs[1].properties[0].fieldData[3].value,
   	})
-  	
+
   	sourceDiv.find('.time_delimiter').text(attrs[1].properties[3].value)
-  	
+
   	let stime=mapped[0].value==''?mapped[0].name:mapped[0].value
 	let etime=mapped[1].value==''?mapped[1].name:mapped[1].value
 	let options={}
