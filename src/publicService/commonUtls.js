@@ -83,13 +83,16 @@ export default {
 		f.length = 2
 		d.length = 3
 		t.length = 3
+		if(dateString.length==8){//修改当时间为时分秒时产生的bug
+			dateString = ' ' + dateString;
+		}
 		f = dateString.split(' ')
 		var arr = []
 		if(f[0].indexOf('-') > -1) {
 			d = (f[0] ? f[0] : '').split('-', 3)
 		} else if(f[0].indexOf('/') > -1) {
 			d = (f[0] ? f[0] : '').split('/', 3)
-		} else {
+		}else{
 			d = (f[0] ? f[0] : '').split('.', 3)
 		}
 		if(type == 'normal') {
@@ -280,15 +283,15 @@ export default {
 		arr.push(seconds)
 		return arr
 	},
-	dateFtt: function(date, fmt) { //author: meizz   
+	dateFtt: function(date, fmt) { //author: meizz
 		var o = {
-			"M+": date.getMonth() + 1, //月份   
-			"d+": date.getDate(), //日   
-			"H+": date.getHours(), //小时   
-			"m+": date.getMinutes(), //分   
-			"s+": date.getSeconds(), //秒   
-			"q+": Math.floor((date.getMonth() + 3) / 3), //季度   
-			"S": date.getMilliseconds() //毫秒   
+			"M+": date.getMonth() + 1, //月份
+			"d+": date.getDate(), //日
+			"H+": date.getHours(), //小时
+			"m+": date.getMinutes(), //分
+			"s+": date.getSeconds(), //秒
+			"q+": Math.floor((date.getMonth() + 3) / 3), //季度
+			"S": date.getMilliseconds() //毫秒
 		};
 		if(/(y+)/.test(fmt))
 			fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
@@ -298,7 +301,7 @@ export default {
 		return fmt;
 	},
 	/**
-	 * 时间比较 
+	 * 时间比较
 	 */
 	compareTime: function(x, y) {
 		let x1 = this.DateToUnix(x)
@@ -307,7 +310,7 @@ export default {
 	},
 
 	/**
-	 * 数值比较 
+	 * 数值比较
 	 */
 	compareValue: function(x, y) {
 		if(x > y) {
@@ -388,14 +391,14 @@ export default {
 			} else {
 				return(amount < 10 ? '.0' + amount : '.' + amount);
 			}
-	
+
 		}
 		if(strNum >= 1000) {
 			return outputmoney(strNum + "");
 		} else {
 			return strNum
 		}
-	
+
 	}
 }
 /**
@@ -424,15 +427,15 @@ function mul(a, b) {
 
 
 //格式化时间
-function dateFtt(date, fmt) { //author: meizz   
+function dateFtt(date, fmt) { //author: meizz
 	var o = {
-		"M+": date.getMonth() + 1, //月份   
-		"d+": date.getDate(), //日   
-		"H+": date.getHours(), //小时   
-		"m+": date.getMinutes(), //分   
-		"s+": date.getSeconds(), //秒   
-		"q+": Math.floor((date.getMonth() + 3) / 3), //季度   
-		"S": date.getMilliseconds() //毫秒   
+		"M+": date.getMonth() + 1, //月份
+		"d+": date.getDate(), //日
+		"H+": date.getHours(), //小时
+		"m+": date.getMinutes(), //分
+		"s+": date.getSeconds(), //秒
+		"q+": Math.floor((date.getMonth() + 3) / 3), //季度
+		"S": date.getMilliseconds() //毫秒
 	};
 	if(/(y+)/.test(fmt))
 		fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));

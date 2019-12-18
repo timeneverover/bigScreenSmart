@@ -104,7 +104,7 @@ export default {
 		}
 		chartOption.yAxis.splitNumber = parseInt(attrs[3].properties[1].fieldData[2].value) // 分隔数量
 		let ytype = attrs[3].properties[1].fieldData[3].value
-		//y 数据格式 
+		//y 数据格式
 		chartOption.yAxis.axisLabel.formatter = function(value, index) {
 			if(ytype == '11（整数') {
 				return parseInt(value)
@@ -116,7 +116,7 @@ export default {
 				return value
 			}
 		}
-		let yrotate = attrs[3].properties[1].fieldData[4].value // 角度 
+		let yrotate = attrs[3].properties[1].fieldData[4].value // 角度
 		if(yrotate == '水平' || yrotate == '') {
 			chartOption.yAxis.axisLabel.rotate = 0
 		} else if(yrotate == '斜角') {
@@ -149,10 +149,10 @@ export default {
 			rmin=2
 			rmax=2
 		}
-		
+
 		arrMap.push(rmin)
 		arrMap.push(rmax)
-		
+
 		chartOption.visualMap[0].inRange.symbolSize=[].concat(arrMap)
 		console.log('arrMap:'+JSON.stringify(arrMap))
 		//------图例----------
@@ -233,7 +233,7 @@ export default {
 			}
 			chartOption.series[i].itemStyle.normal.borderColor=attrs[6].properties[i].fieldData[2].value
 			/*chartOption.series[i].symbolSize=function(data){
-				return  data[2]; 
+				return  data[2];
 			}*/
 		}
 		//判断是否显示 （editable)

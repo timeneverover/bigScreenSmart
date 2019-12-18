@@ -76,6 +76,11 @@
 			param.type = this.$route.query.type;
 			param.id = this.$route.query.id;
 			param.userid = this.$route.query.userid;
+			//连线
+			param.fromType = this.$route.query.fromType;
+			param.toType = this.$route.query.toType;
+			param.fromId = this.$route.query.fromId;
+			param.toId = this.$route.query.toId;
 
 			this.nowMoId = param.mo_id;
 			console.log(param);

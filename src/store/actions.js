@@ -467,7 +467,7 @@ export default {
     httpService.postLink(testUrl, data).then(function(res) {
       commit(types.TEST_CONNECT, res);
     }).catch(function(error) {
-      console.log(error);
+        console.log(error);
         TipBoxService.open('fail', error);
     })
   },
@@ -476,10 +476,10 @@ export default {
     commit
   }, data) {
     httpService.postLink(Urls.testHttpConnect, data).then(function(res) {
-      commit(types.ADD_DATA, res);
+      commit(types.TEST_CONNECT, res);
     }).catch(function(error) {
       console.log(error);
-        TipBoxService.open('fail', error);
+        // TipBoxService.open('fail', error);
     })
   },
   //http 连接接口
@@ -490,10 +490,10 @@ export default {
       let addData = data.data
       addData.create_Time = res.currenttime
       addData.data_id = res.data_id
-      commit(types.ADD_DATA, addData);
+      commit(types.TEST_CONNECT, addData);
     }).catch(function(error) {
       console.log(error);
-        TipBoxService.open('fail', error);
+        // TipBoxService.open('fail', error);
     })
   },
   //webSocket测试连接
