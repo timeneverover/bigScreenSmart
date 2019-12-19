@@ -35,7 +35,9 @@ export default {
     } else {
       if (xtype == '时间型') {
         tt = attrs[2].properties[1].fieldData[3].value //数据格式
-        status = commonUtil.setDataType(tt, xdata[0])
+        if(xdata.length>0) {
+            status = commonUtil.setDataType(tt, xdata[0])
+        }
       }
       chartOption.xAxis.axisLabel.formatter = function(value, index) {
         if (xtype == '时间型' && !status) {

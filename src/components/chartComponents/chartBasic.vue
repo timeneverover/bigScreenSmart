@@ -405,10 +405,10 @@
 					let options = ''
 					if(type == '基本柱状图'){
 						options = barUtil.setOption(attrs)
-						options.series[1].data = datas.ydata[0]
-						let s1 = []
+						options.series[1].data = datas.ydata[0]?datas.ydata[0]:[];
+						let s1 = [];
 						let maxY = Math.max.apply(null, datas.ydata[0])
-						let len2 = datas.ydata[0].length
+						let len2 = datas.ydata[0]?datas.ydata[0].length:0;
 						for(let i = 0; i < len2; i++) {
 							s1.push(maxY)
 						}
@@ -453,7 +453,7 @@
 					}else if(type == '基本饼图'){
 						options = pieUtil.setOption(attrs);
 						let dataArray = [];
-						let yData = datas.ydata[0];
+						let yData = datas.ydata[0]?datas.ydata[0]:[];
 						let xData = datas.xdata;
 						let len = yData.length
 						for(let i=0;i<len;i++){
@@ -467,7 +467,7 @@
 					}else if(type == '指标对比饼图'){
 						options = indexComparPieUtil.setOption(attrs);
 						let dataArray = [];
-						let yData = datas.ydata[0];
+						let yData = datas.ydata[0]?datas.ydata[0]:[];
 						let xData = datas.xdata;
 						let len = yData.length
 						for(let i=0;i<len;i++){
@@ -481,7 +481,7 @@
 					}else if(type == '带图饼图'){
 						options = pieWithImgUtil.setOption(attrs, sourceDiv);
 						let dataArray = [];
-						let yData = datas.ydata[0];
+						let yData = datas.ydata[0]?datas.ydata[0]:[];
 						let xData = datas.xdata;
 						let len = yData.length
 						for(let i=0;i<len;i++){
@@ -494,7 +494,7 @@
 						options.series[0].data = dataArray;
 					}else if(type == '多维度饼图'){
 						let dataArray = [];
-						let yData = datas.ydata[0];
+						let yData = datas.ydata[0]?datas.ydata[0]:[];
 						let xData = datas.xdata;
 						let len = yData.length
 						for(let i=0;i<len;i++){
@@ -532,7 +532,7 @@
 					}else if(type=="标注对比饼图"){
 						options = markpieUtil.setOption(attrs);
 						let dataArray = [];
-						let yData = datas.ydata[0];
+						let yData = datas.ydata[0]?datas.ydata[0]:[];
 						let xData = datas.xdata;
 						let len = yData.length
 						for(let i=0;i<len;i++){
@@ -557,19 +557,6 @@
 						let seriesLength='';
 						let seriesType = datas.stypes;// 数据系列编号s
 						if(type == '基本折线图') {
-							//在渲染图形之前改变
-							// let seriesData = JSON.parse(JSON.stringify(this.$store.state.leftEditMainData[this.chartIndex].attr_descr.properties[5]));
-							// let seriesTemp = seriesData.properties[0];
-							// seriesData.properties = [];
-							// for(let s=0;s<seriesType.length;s++){
-							// 	let temp = JSON.parse(JSON.stringify(seriesTemp));
-							// 	temp.name = '系列' + (s+1);
-							// 	temp.sid = seriesType[s];
-							// 	temp.fieldData[0].value = seriesType[s];
-							// 	console.log(temp);
-							// 	seriesData.properties.push(temp);
-							// }
-							// this.$store.state.leftEditMainData[this.chartIndex].attr_descr.properties[5] = seriesData;
 							options = chartUtil.setOption(attrs, xdata)
 							seriesLength= attrs[5].properties.length
 						} else if(type == '散点图') {

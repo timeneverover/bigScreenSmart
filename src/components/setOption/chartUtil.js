@@ -25,7 +25,6 @@ export default {
 		//x轴标签
 		let xtype = attrs[2].properties[1].fieldData[0].value //数据种类
 
-		//let xdata = [].concat(datas.xdata)
 		let status = true
 		let tt = ''
 		let geshi = attrs[2].properties[1].fieldData[4].value
@@ -38,7 +37,9 @@ export default {
 		} else {
 			if(xtype == '时间型') {
 				tt = attrs[2].properties[1].fieldData[3].value //数据格式
-				status = this.setDataType(tt, xdata[0])
+				if(xdata.length>0) {
+					status = this.setDataType(tt, xdata[0])
+				}
 			}
 			let this_ = this
 			chartOption.xAxis.axisLabel.formatter = function(value, index) {
@@ -90,7 +91,6 @@ export default {
 		} else if(xrotate == '垂直') {
 			chartOption.xAxis.axisLabel.rotate = 270
 		}
-		//chartOption.xAxis.data = xdata
 		//x轴线
 		chartOption.xAxis.axisLine.lineStyle.color = attrs[2].properties[2].fieldData[0].value
 		//x网格线
@@ -130,7 +130,7 @@ export default {
 			}
 		}
 		chartOption.yAxis.offset = parseInt(attrs[3].properties[1].fieldData[4].value) // 分隔数量
-		let yrotate = attrs[3].properties[1].fieldData[5].value // 角度 
+		let yrotate = attrs[3].properties[1].fieldData[5].value // 角度
 		if(yrotate == '水平' || yrotate == '') {
 			chartOption.yAxis.axisLabel.rotate = 0
 		} else if(yrotate == '斜角') {
@@ -184,12 +184,6 @@ export default {
 			chartOption.series.push(JSON.parse(JSON.stringify(iseries)))
 		}
 		for(let i = 0; i < seriesLength; i++) {
-			/*if(yDatas[i]) {
-				chartOption.series[i].data = yDatas[i]
-			} else {
-				chartOption.series[i].data = []
-			}
-*/
 			chartOption.series[i].name = attrs[5].properties[i].fieldData[0].value // 系列名称
 
 			chartOption.series[i].connectNulls = attrs[1].properties[2].fieldData[0].value // 空值数据
@@ -253,15 +247,6 @@ export default {
 				chartOption.series[i].areaStyle.color = 'transparent'
 			}
 		}
-		/*let ydataLen = yDatas.length
-		if(ydataLen > seriesLength) {
-			for(let yl = seriesLength; yl < ydataLen; yl++) {
-				let index = yl % seriesLength
-				let series = JSON.parse(JSON.stringify(chartOption.series[index]))
-				series.data = yDatas[yl]
-				chartOption.series.push(series)
-			}
-		}*/
 		//判断是否显示 （editable)
 		chartOption.xAxis.show = attrs[2].editable != '2' ? true : false
 		chartOption.yAxis.show = attrs[3].editable != '2' ? true : false
@@ -282,7 +267,7 @@ export default {
 			chartOption.yAxis.name = null
 		}
 		if(xname) { // 可显示
-			
+
 		}else{
 			chartOption.xAxis.name = null
 			chartOption.xAxis.offset = 0
@@ -297,12 +282,10 @@ export default {
 		} else if(geshi == '11.11(浮点数)') {
 			return parseFloat(value).toFixed(2)
 		} else {
-			//					console.log('time chuo:' + commonUtil.DateToUnix(value))
 			if(xtype == '数值型') {
 				return 0
 			} else {
 				let data = this.setDataByType(value, dataType)
-				//					console.log('x label:' + JSON.stringify(data))
 				if(geshi == '2016年') {
 					return data[0] + '年'
 				} else if(geshi == '2016(年份)') {
@@ -333,7 +316,6 @@ export default {
 	},
 	setDataByType(value, tt) {
 		let arr = []
-		//console.log('value:'+value);
 		if(tt == '2016') {
 			arr = commonUtil.DateToArr(value, 'year')
 		} else if(tt == '02') {
@@ -343,7 +325,6 @@ export default {
 		} else {
 			arr = commonUtil.DateToArr(value, 'normal')
 		}
-		//console.log('vv:'+arr)
 		return arr
 	},
 	setDataType(value, data) {
@@ -351,8 +332,6 @@ export default {
 		let len1 = '',
 			len2 = ''
 		let flag = true
-//		len1 = value.split(' ').length
-//		len2 = data.split(' ').length
 		if(value.indexOf(' ') > -1) {
 			len1 = value.split(' ').length
 			len2 = data.split(' ').length
@@ -360,11 +339,6 @@ export default {
 			len1 =0
 			len2 =0
 		}
-		/*if(data.indexOf(' ') > -1) {
-			len2 = data.split(' ').length
-		}else{
-			len2 =0
-		}*/
 		if(len1 == len2) {
 			let len3 = '',
 				len4 = '',
@@ -385,7 +359,6 @@ export default {
 				len5 = value.split(':').length
 				len6 = data.split(':').length
 			}
-			//					console.log('len3:' + len3 + ' len4:' + len4 + ' len5:' + len5 + ' len6:' + len6)
 			if(len3 != len4 || len5 != len6) {
 				return false
 			} else {

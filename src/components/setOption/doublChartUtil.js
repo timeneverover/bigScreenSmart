@@ -9,11 +9,11 @@ export default {
 		let newData=[]
 		newData.push(arrData.ydata[0])
 		newData.push(arrData.zdata[0])
-		
+
 		let attrData2 = basicUtil.getAttrArr(attrs)
 		chartOption.tooltip = basicUtil.getTooltip(attrData2.tooltip, attrData2.tooltipeditable, '柱图')
 		chartOption.legend = JSON.parse(JSON.stringify(basicUtil.getLegend(attrData2.legend, attrData2.legendeditable)))
-		
+
 		//动画
 		chartOption.animation = attrs[9].editable != '2'
 		chartOption.animationDuration = attrs[9].properties[0].value
@@ -44,7 +44,9 @@ export default {
 		} else {
 			if(xtype == '时间型') {
 				tt = attrs[2].properties[1].fieldData[3].value //数据格式
-				status = this.setDataType(tt, xdata[0])
+				if(xdata.length>0){
+					status = this.setDataType(tt, xdata[0])
+				}
 			}
 			let this_ = this
 			chartOption.xAxis.axisLabel.formatter = function(value, index) {
@@ -102,7 +104,7 @@ export default {
 		chartOption.xAxis.axisLabel.show = attrs[2].properties[1].editable != '2' ? true : false //x轴标签
 		chartOption.xAxis.axisLine.show = attrs[2].properties[2].editable != '2' ? true : false //x轴线
 		chartOption.xAxis.splitLine.show = attrs[2].properties[3].editable != '2' ? true : false //x网格线
-		
+
 		chartOption.yAxis=[]
 		chartOption.series=[]
 		for(let k=0;k<2;k++){
@@ -133,7 +135,7 @@ export default {
 			}
 			eoption.splitNumber = parseInt(attrs[k+3].properties[1].fieldData[2].value) // 分隔数量
 			eoption.axisLabel.formatter =  basicUtil.getFormatMethod(attrs[k+3].properties[1].fieldData[3].value)
-			let yrotate = attrs[k+3].properties[1].fieldData[4].value // 角度 
+			let yrotate = attrs[k+3].properties[1].fieldData[4].value // 角度
 			if(yrotate == '水平' || yrotate == '') {
 				eoption.axisLabel.rotate = 0
 			} else if(yrotate == '斜角') {
@@ -143,7 +145,7 @@ export default {
 			}
 			eoption.axisLine.lineStyle.color = attrs[k+3].properties[3].fieldData[0].value
 			eoption.splitLine.lineStyle.color = attrs[k+3].properties[4].fieldData[0].value
-			
+
 			eoption2.name = attrs[k+7].properties[0].value // 系列名称
 
 			eoption2.connectNulls = attrs[1].properties[2].fieldData[0].value // 空值数据
@@ -214,7 +216,7 @@ export default {
 		}
 //		console.log(JSON.stringify(chartOption))
 		return chartOption
-		
+
 	},
 	getLabel(geshi, dataType, value, xtype) { // 显示格式
 		if(geshi == '11(整数)') {

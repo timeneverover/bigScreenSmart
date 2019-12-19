@@ -35,7 +35,9 @@ export default {
 		} else {
 			if(xtype == '时间型') {
 				tt = attrs[2].properties[1].fieldData[3].value //数据格式
-				status = commonUtil.setDataType(tt, xdata[0])
+				if(xdata.length>0) {
+					status = commonUtil.setDataType(tt, xdata[0])
+				}
 			}
 			chartOption.xAxis.axisLabel.formatter = function(value, index) {
 				if(xtype == '时间型' && !status) {
@@ -63,7 +65,6 @@ export default {
 			} else {
 				chartOption.xAxis.min = null
 			}
-			console.log('max:'+chartOption.xAxis.max+'\nmin:'+chartOption.xAxis.min)
 			chartOption.xAxis.name = attrs[2].properties[1].fieldData[7].value
 		}
 		let num = parseInt(attrs[2].properties[1].fieldData[8].value)
@@ -136,7 +137,6 @@ export default {
 		let rmin=2,rmax=244
 		if(isYMap){
 			/*var data=this.getMinMaxData(yDatas)
-			console.log(data)
 			rmin=data.min
 			rmax=data.max*/
 		}else{
@@ -154,7 +154,6 @@ export default {
 		arrMap.push(rmax)
 
 		chartOption.visualMap[0].inRange.symbolSize=[].concat(arrMap)
-		console.log('arrMap:'+JSON.stringify(arrMap))
 		//------图例----------
 		//文本
 		chartOption.legend.textStyle.fontWeight = attrs[5].properties[0].fieldData[2].value
@@ -259,7 +258,6 @@ export default {
 		} else {
 			chartOption.xAxis.name = null
 		}
-//		console.log('option:'+JSON.stringify(chartOption))
 		return chartOption
 	},
 	getMinMaxData(arr){
