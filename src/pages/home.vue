@@ -1,7 +1,7 @@
 <template>
 	<div class="home-main">
 		<div class="menu-main" >
-			<img src="../assets/logo.gif" />
+			<img class="logo-img" src="../assets/logo.gif" />
 			<div class="menu-parent">
 				<span class="menu-span" @click="selectMenu('menu1')">
 					<a class="menu-link" :class="currentMenu=='menu1'?'menu-active':''"  >
